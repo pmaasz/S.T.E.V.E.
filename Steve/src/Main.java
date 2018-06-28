@@ -1,4 +1,3 @@
-
 import java.awt.Color;
 import java.awt.event.*;
 
@@ -18,7 +17,7 @@ public class Main {
         //Audio a = new Audio();
 
         LeftEye leftEye = new LeftEye();
-        RightEye rightEye = new RightEye();
+        RigthEye rightEye = new RigthEye();
         Eyes eyes = new Eyes();
 
         //Graphic
@@ -126,12 +125,12 @@ public class Main {
 
     }
 
-    public void moveRightY(RightEye rightEye)
+    public void moveRightY( )
     {
 
     }
 
-    public void moveRightX(RightEye rightEye)
+    public void moveRightX()
     {
 
     }

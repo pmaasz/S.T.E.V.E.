@@ -61,7 +61,8 @@ public class Frame extends JFrame
         public void mouseDragged(MouseEvent e) { }
 
         @Override
-        public void mouseMoved(MouseEvent e) {
+        public void mouseMoved(MouseEvent e)
+        {
             mouseX = e.getX();
             mouseY = e.getY();
         }
@@ -70,12 +71,14 @@ public class Frame extends JFrame
         public void mouseClicked(MouseEvent e) { }
 
         @Override
-        public void mousePressed(MouseEvent e) {
+        public void mousePressed(MouseEvent e)
+        {
             click = true;
         }
 
         @Override
-        public void mouseReleased(MouseEvent e) {
+        public void mouseReleased(MouseEvent e)
+        {
             click = false;
         }
 

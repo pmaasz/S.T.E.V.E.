@@ -2,23 +2,7 @@ import java.awt.*;
 
 public class Eyes
 {
-    private int leftXPos = 55;
-
-    private int leftYPos = 40;
-
-    private int widthleft = 80;
-
-    private int heightleft = 90;
-
-    private int widthright = 80;
-
-    private int heightright = 90;
-
     private int curve = 30;
-
-    private int dotx = 1;
-
-    private int doty = 230;
 
     private int radius = 2;
 
@@ -32,13 +16,7 @@ public class Eyes
 
     private boolean blink = false;
 
-    private double mouseX;
-
-    private double mouseY;
-
-    private boolean click;
-
-    private Color c;
+    private Color color;
 
     public Eyes()
     {
@@ -50,22 +28,6 @@ public class Eyes
 
     public void setCurve(int curve) {
         this.curve = curve;
-    }
-
-    public int getDotx() {
-        return dotx;
-    }
-
-    public void setDotx(int dotx) {
-        this.dotx = dotx;
-    }
-
-    public int getDoty() {
-        return doty;
-    }
-
-    public void setDoty(int doty) {
-        this.doty = doty;
     }
 
     public int getRadius() {
@@ -116,35 +78,11 @@ public class Eyes
         this.blink = blink;
     }
 
-    public double getMouseX() {
-        return mouseX;
+    public Color getColor() {
+        return color;
     }
 
-    public void setMouseX(double mouseX) {
-        this.mouseX = mouseX;
-    }
-
-    public double getMouseY() {
-        return mouseY;
-    }
-
-    public void setMouseY(double mouseY) {
-        this.mouseY = mouseY;
-    }
-
-    public boolean isClick() {
-        return click;
-    }
-
-    public void setClick(boolean click) {
-        this.click = click;
-    }
-
-    public Color getC() {
-        return c;
-    }
-
-    public void setC(Color c) {
-        this.c = c;
+    public void setC(Color color) {
+        this.color = color;
     }
 }

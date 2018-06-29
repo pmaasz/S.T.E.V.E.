@@ -1,7 +1,7 @@
 import java.awt.Color;
 import java.awt.event.*;
 
-public class Main {
+public class Steve {
 
     public static void main (String[] args) {
 

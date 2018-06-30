@@ -1,8 +1,8 @@
 public class Dot
 {
-    private int dotx = 1;
+    private int dotx; //= 1;
 
-    private int doty = 230;
+    private int doty; //= 230;
 
     public Dot()
     {

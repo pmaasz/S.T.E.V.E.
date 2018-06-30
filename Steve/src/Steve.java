@@ -13,9 +13,13 @@ public class Steve {
 
     private Dot dot;
 
-    public Steve (Frame frame)
+    public Steve (Frame frame, Eyes eyes, Dot dot, LeftEye leftEye, RightEye rightEye)
     {
         this.frame = new Frame();
+        this.eyes = new Eyes();
+        this.dot = new Dot();
+        this.leftEye = new LeftEye();
+        this.rightEye = new RightEye();
     }
 
     public static void main (String[] args)

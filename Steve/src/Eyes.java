@@ -2,19 +2,19 @@ import java.awt.*;
 
 public class Eyes
 {
-    private int curve = 30;
+    private int curve; //= 30;
 
-    private int radius = 2;
+    private int radius; //= 2;
 
-    private int red = 10;
+    private int red; //= 10;
 
-    private int green = 180;
+    private int green; //= 180;
 
-    private int blue = 255;
+    private int blue; //= 255;
 
-    private int counter = 0;
+    private int counter; //= 0;
 
-    private boolean blink = false;
+    private boolean blink; //= false;
 
     public Eyes()
     {

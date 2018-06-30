@@ -20,9 +20,13 @@ public class Frame extends JFrame
     protected int blue = 255;
     protected int counter = 0;
     protected boolean blink = false;
+
     protected double mouseX;
+
     protected double mouseY;
+
     protected boolean click;
+
     public Color c;
 
     DrawPanel drawPanel = new DrawPanel();
@@ -54,6 +58,16 @@ public class Frame extends JFrame
         return mouseY;
     }
 
+    public boolean isClick()
+    {
+        return click;
+    }
+
+    public void setClick(boolean click)
+    {
+        this.click = click;
+    }
+
     private class KeyHandler implements MouseMotionListener, MouseListener
     {
 
@@ -73,13 +87,13 @@ public class Frame extends JFrame
         @Override
         public void mousePressed(MouseEvent e)
         {
-            click = true;
+            setClick(true);
         }
 
         @Override
         public void mouseReleased(MouseEvent e)
         {
-            click = false;
+            setClick(false);
         }
 
         @Override

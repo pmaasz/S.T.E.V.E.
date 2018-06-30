@@ -16,8 +16,6 @@ public class Eyes
 
     private boolean blink = false;
 
-    private Color color;
-
     public Eyes()
     {
     }
@@ -76,13 +74,5 @@ public class Eyes
 
     public void setBlink(boolean blink) {
         this.blink = blink;
-    }
-
-    public Color getColor() {
-        return color;
-    }
-
-    public void setC(Color color) {
-        this.color = color;
     }
 }

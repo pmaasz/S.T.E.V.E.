@@ -1,26 +1,28 @@
 public class EyesRepository
 {
-    public EyesRepository()
-    {
+    private LeftEye leftEye;
 
+    private RightEye rightEye;
+
+    public EyesRepository(LeftEye leftEye, RightEye rightEye)
+    {
+        this.leftEye = leftEye;
+        this.rightEye = rightEye;
     }
 
-    public void moveLeftY(LeftEye leftEye)
+    public void EyesmoveY(int leftY, int rightY)
     {
-
+        this.leftEye.setLeftYPos(leftY);
+        this.rightEye.setRightYPos(rightY);
     }
 
-    public void moveLeftX(LeftEye leftEye)
+    public void EyesmoveX(int leftX, int rightX)
     {
-
+        this.leftEye.setLeftXPos(leftX);
+        this.rightEye.setRightXPos(rightX);
     }
 
-    public void moveRightY( )
-    {
-
-    }
-
-    public void moveRightX()
+    public void EyeResize(LeftEye leftEye, RightEye rightEye)
     {
 
     }

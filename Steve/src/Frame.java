@@ -58,6 +58,16 @@ public class Frame extends JFrame
         return mouseY;
     }
 
+    public void setMouseX(double mouseX)
+    {
+        this.mouseX = mouseX;
+    }
+
+    public void setMouseY(double mouseY)
+    {
+        this.mouseY = mouseY;
+    }
+
     public boolean isClick()
     {
         return click;
@@ -77,8 +87,8 @@ public class Frame extends JFrame
         @Override
         public void mouseMoved(MouseEvent e)
         {
-            mouseX = e.getX();
-            mouseY = e.getY();
+            setMouseX(e.getX());
+            setMouseY(e.getY());
         }
 
         @Override

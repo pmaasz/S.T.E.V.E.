@@ -17,7 +17,7 @@ public class Steve {
         //Audio a = new Audio();
 
         LeftEye leftEye = new LeftEye();
-        RigthEye rightEye = new RigthEye();
+        RightEye rightEye = new RightEye();
         Eyes eyes = new Eyes();
 
         //Graphic

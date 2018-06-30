@@ -4,6 +4,11 @@ public class Dot
 
     private int doty = 230;
 
+    public Dot()
+    {
+
+    }
+
     public int getDotx()
     {
         return dotx;

@@ -41,6 +41,11 @@ public class Frame extends JFrame
         setTitle("S.T.E.V.E.");
         addMouseMotionListener(new KeyHandler());
         addMouseListener(new KeyHandler());
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                System.exit(0);
+            }
+        });
     }
 
     public void repaintDrawPanel()

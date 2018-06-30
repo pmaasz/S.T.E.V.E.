@@ -3,6 +3,21 @@ import java.awt.event.*;
 
 public class Steve {
 
+    private Frame frame;
+
+    private Eyes eyes;
+
+    private LeftEye leftEye;
+
+    private RightEye rightEye;
+
+    private Dot dot;
+
+    public Steve (Frame frame)
+    {
+        this.frame = new Frame();
+    }
+
     public static void main (String[] args) {
 
         Frame f = new Frame();
@@ -14,11 +29,6 @@ public class Steve {
                 System.exit(0);
             }
         });
-        //Audio a = new Audio();
-
-        LeftEye leftEye = new LeftEye();
-        RightEye rightEye = new RightEye();
-        Eyes eyes = new Eyes();
 
         //Graphic
         while(true) {
@@ -113,25 +123,5 @@ public class Steve {
                 e.printStackTrace();
             }
         }
-    }
-
-    public void moveLeftY(LeftEye leftEye)
-    {
-
-    }
-
-    public void moveLeftX(LeftEye leftEye)
-    {
-
-    }
-
-    public void moveRightY( )
-    {
-
-    }
-
-    public void moveRightX()
-    {
-
     }
 }

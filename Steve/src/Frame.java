@@ -4,21 +4,34 @@ import javax.swing.*;
 
 public class Frame extends JFrame
 {
-
     protected int leftxpos = 55;
+
     protected int leftypos = 40;
+
     protected int widthleft = 80;
+
     protected int heightleft = 90;
+
     protected int widthright = 80;
+
     protected int heightright = 90;
+
     protected int curve = 30;
+
     protected int dotx = 1;
+
     protected int doty = 230;
+
     protected int radius = 2;
+
     protected int red = 10;
+
     protected int green = 180;
+
     protected int blue = 255;
+
     protected int counter = 0;
+
     protected boolean blink = false;
 
     protected double mouseX;
@@ -27,12 +40,15 @@ public class Frame extends JFrame
 
     protected boolean click;
 
+    protected DrawPanel drawPanel;
+
     public Color c;
 
-    DrawPanel drawPanel = new DrawPanel();
+
 
     public Frame()
     {
+        this.drawPanel = new DrawPanel();
         add(drawPanel);
         pack();
         setSize(300,300);
@@ -41,8 +57,10 @@ public class Frame extends JFrame
         setTitle("S.T.E.V.E.");
         addMouseMotionListener(new KeyHandler());
         addMouseListener(new KeyHandler());
-        addWindowListener(new WindowAdapter() {
-            public void windowClosing(WindowEvent e) {
+        addWindowListener(new WindowAdapter()
+        {
+            public void windowClosing(WindowEvent e)
+            {
                 System.exit(0);
             }
         });
@@ -50,7 +68,7 @@ public class Frame extends JFrame
 
     public void repaintDrawPanel()
     {
-        drawPanel.repaint();
+        this.drawPanel.repaint();
     }
 
     public double getMouseX()

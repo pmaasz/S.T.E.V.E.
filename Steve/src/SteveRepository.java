@@ -1,13 +1,22 @@
-public class EyesRepository
+public class SteveRepository
 {
+    private Frame frame;
+
+    private Eyes eyes;
+
     private LeftEye leftEye;
 
     private RightEye rightEye;
 
-    public EyesRepository(LeftEye leftEye, RightEye rightEye)
+    private Dot dot;
+
+    public SteveRepository (Frame frame, Eyes eyes, Dot dot, LeftEye leftEye, RightEye rightEye)
     {
-        this.leftEye = leftEye;
-        this.rightEye = rightEye;
+        this.frame = new Frame();
+        this.eyes = new Eyes();
+        this.dot = new Dot();
+        this.leftEye = new LeftEye();
+        this.rightEye = new RightEye();
     }
 
     public void EyesmoveY(int leftY, int rightY)

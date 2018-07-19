@@ -45,7 +45,6 @@ public class Frame extends JFrame
     public Color c;
 
 
-
     public Frame()
     {
         this.drawPanel = new DrawPanel();

@@ -3,28 +3,13 @@ import java.awt.event.*;
 
 public class Steve {
 
-    private Frame frame;
-
-    private Eyes eyes;
-
-    private LeftEye leftEye;
-
-    private RightEye rightEye;
-
-    private Dot dot;
-
-    public Steve (Frame frame, Eyes eyes, Dot dot, LeftEye leftEye, RightEye rightEye)
-    {
-        this.frame = new Frame();
-        this.eyes = new Eyes();
-        this.dot = new Dot();
-        this.leftEye = new LeftEye();
-        this.rightEye = new RightEye();
-    }
-
     public static void main (String[] args)
     {
-        Frame f = new Frame();
+        Frame frame = new Frame();
+        Eyes eyes = new Eyes();
+        Dot dot = new Dot();
+        LeftEye leftEye = new LeftEye();
+        RightEye rightEye = new RightEye();
 
         //Graphic
         while(true)
@@ -32,121 +17,121 @@ public class Steve {
             int i;							//upper left corner for reference
 
             //Up and Down
-            if(f.leftypos > 90 || f.leftypos < 30)
+            if(frame.leftypos > 90 || frame.leftypos < 30)
             {			//Resizing the eyes
-                f.heightright = 70;
-                f.heightleft = 70;
+                frame.heightright = 70;
+                frame.heightleft = 70;
             } else {
-                f.heightleft = 90;
-                f.heightright = 90;
+                frame.heightleft = 90;
+                frame.heightright = 90;
             }
 
-            if(f.leftypos < 10) f.leftypos = 10;				//Bounds
+            if(frame.leftypos < 10) frame.leftypos = 10;				//Bounds
 
-            if(f.leftypos > 110) f.leftypos = 110;
+            if(frame.leftypos > 110) frame.leftypos = 110;
 
-            for(i = 0; i < f.mouseY;)
+            for(i = 0; i < frame.mouseY;)
             {							//Movement
-                if(f.leftypos < f.mouseY)
+                if(frame.leftypos < frame.mouseY)
                 {
-                    f.leftypos++;
+                    frame.leftypos++;
 
-                    f.repaintDrawPanel();
+                    frame.repaintDrawPanel();
                 }
 
                 break;
             }
 
-            for(i = 0; i < f.mouseY;)
+            for(i = 0; i < frame.mouseY;)
             {
-                if(f.leftypos > f.mouseY)
+                if(frame.leftypos > frame.mouseY)
                 {
-                    f.leftypos--;
-                    f.repaintDrawPanel();
+                    frame.leftypos--;
+                    frame.repaintDrawPanel();
                 }
 
                 break;
             }
 
             //Left and Right
-            if(f.leftxpos > 100)
+            if(frame.leftxpos > 100)
             {								//Resizing the eyes
-                f.widthright = 70;
+                frame.widthright = 70;
             } else {
-                f.widthright = 80;
+                frame.widthright = 80;
             }
 
-            if(f.leftxpos < 25)
+            if(frame.leftxpos < 25)
             {
-                f.widthleft = 70;
+                frame.widthleft = 70;
             } else {
-                f.widthleft = 80;
+                frame.widthleft = 80;
             }
 
-            if(f.leftxpos<10) f.leftxpos = 10;					//Bounds
+            if(frame.leftxpos<10) frame.leftxpos = 10;					//Bounds
 
-            if(f.leftxpos>110) f.leftxpos = 110;
+            if(frame.leftxpos>110) frame.leftxpos = 110;
 
-            for(i = 0; i < f.mouseX;)
+            for(i = 0; i < frame.mouseX;)
             {							//Movement
-                if(f.leftxpos < f.mouseX)
+                if(frame.leftxpos < frame.mouseX)
                 {
-                    f.leftxpos++;
-                    f.repaintDrawPanel();
+                    frame.leftxpos++;
+                    frame.repaintDrawPanel();
                 }
 
                 break;
             }
 
-            for(i = 0; i < f.mouseX;)
+            for(i = 0; i < frame.mouseX;)
             {
-                if(f.leftxpos > f.mouseX)
+                if(frame.leftxpos > frame.mouseX)
                 {
-                    f.leftxpos--;
-                    f.repaintDrawPanel();
+                    frame.leftxpos--;
+                    frame.repaintDrawPanel();
                 }
 
                 break;
             }
 
             //blinking
-            f.counter++;
+            frame.counter++;
 
-            if (f.blink && f.counter > 100)
+            if (frame.blink && frame.counter > 100)
             {
-                f.blink = false;
-                f.counter = 0;
-            } else if (f.counter > 1100)
+                frame.blink = false;
+                frame.counter = 0;
+            } else if (frame.counter > 1100)
             {
-                f.blink = true;
-                f.counter = 0;
+                frame.blink = true;
+                frame.counter = 0;
             }
 
             //Visualizer
             for(i = 0; i < 305;)
             {        		 		 //Movement
-                if(f.dotx < 300)
+                if(frame.dotx < 300)
                 {
-                    f.dotx++;
+                    frame.dotx++;
                 }
 
-                if(f.dotx > 299)
+                if(frame.dotx > 299)
                 {
-                    f.dotx = 1;
+                    frame.dotx = 1;
                 }
 
                 break;
             }
 
-            if(f.click == true)
+            if(frame.click == true)
             {
-                f.c = new Color(255,30,30);
+                frame.c = new Color(255,30,30);
             } else {
-                f.c = new Color(10, 200, 255);
+                frame.c = new Color(10, 200, 255);
             }
 
             //Frame
-            f.repaintDrawPanel();
+            frame.repaintDrawPanel();
 
             try {
                 Thread.sleep(2);

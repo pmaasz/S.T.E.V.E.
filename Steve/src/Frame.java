@@ -79,4 +79,39 @@ public class Frame extends JFrame
     {
         this.click = click;
     }
+
+    private class KeyHandler implements MouseMotionListener, MouseListener
+    {
+
+        @Override
+        public void mouseDragged(MouseEvent e) { }
+
+        @Override
+        public void mouseMoved(MouseEvent e)
+        {
+            setMouseX(e.getX());
+            setMouseY(e.getY());
+        }
+
+        @Override
+        public void mouseClicked(MouseEvent e) { }
+
+        @Override
+        public void mousePressed(MouseEvent e)
+        {
+            setClick(true);
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e)
+        {
+            setClick(false);
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) { }
+
+        @Override
+        public void mouseExited(MouseEvent e) { }
+    }
 }

@@ -1,12 +1,12 @@
 public class RightEye
 {
-    private int rightXPos; //= 55;
+    private int rightXPos = 155;
 
-    private int rightYPos; //= 40;
+    private int rightYPos = 40;
 
-    private int widthright; //= 80;
+    private int widthright = 80;
 
-    private int heightright; //= 90;
+    private int heightright = 90;
 
     public RightEye()
     {

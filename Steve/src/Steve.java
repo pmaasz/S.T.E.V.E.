@@ -7,7 +7,6 @@ public class Steve {
     {
         Frame frame = new Frame();
         Eyes eyes = new Eyes();
-        Dot dot = new Dot();
         LeftEye leftEye = new LeftEye();
         RightEye rightEye = new RightEye();
 
@@ -107,27 +106,12 @@ public class Steve {
                 frame.counter = 0;
             }
 
-            //Visualizer
-            for(i = 0; i < 305;)
-            {        		 		 //Movement
-                if(frame.dotx < 300)
-                {
-                    frame.dotx++;
-                }
 
-                if(frame.dotx > 299)
-                {
-                    frame.dotx = 1;
-                }
-
-                break;
-            }
-
-            if(frame.click == true)
+            if(frame.isClick())
             {
-                frame.c = new Color(255,30,30);
+                eyes.setColor(255,30,30);
             } else {
-                frame.c = new Color(10, 200, 255);
+                eyes.setColor(10, 200, 255);
             }
 
             //Frame

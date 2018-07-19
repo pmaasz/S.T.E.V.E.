@@ -1,5 +1,3 @@
- import java.awt.Color;
-import java.awt.event.*;
 
 public class Steve {
 
@@ -9,20 +7,23 @@ public class Steve {
         Eyes eyes = new Eyes();
         LeftEye leftEye = new LeftEye();
         RightEye rightEye = new RightEye();
+        Repo repo = new Repo();
 
         //Graphic
         while(true)
         {
-            int i;							//upper left corner for reference
+            int i; //iterator
+            int leftYPos = leftEye.getLeftYPos();
+            int rightYPos = rightEye.getRightYPos();
 
             //Up and Down
-            if(frame.leftypos > 90 || frame.leftypos < 30)
-            {			//Resizing the eyes
-                frame.heightright = 70;
-                frame.heightleft = 70;
+            if((leftYPos > 90 || leftYPos < 30) && (rightYPos > 90 || rightYPos < 30))
+            {
+                rightEye.setHeightright(70);
+                leftEye.setHeightleft(70);
             } else {
-                frame.heightleft = 90;
-                frame.heightright = 90;
+                leftEye.setHeightleft(90);
+                rightEye.setHeightright(90);
             }
 
             if(frame.leftypos < 10) frame.leftypos = 10;				//Bounds
@@ -94,19 +95,9 @@ public class Steve {
             }
 
             //blinking
-            frame.counter++;
+            repo.blink(frame);
 
-            if (frame.blink && frame.counter > 100)
-            {
-                frame.blink = false;
-                frame.counter = 0;
-            } else if (frame.counter > 1100)
-            {
-                frame.blink = true;
-                frame.counter = 0;
-            }
-
-
+            //look angry
             if(frame.isClick())
             {
                 eyes.setColor(255,30,30);
@@ -114,7 +105,6 @@ public class Steve {
                 eyes.setColor(10, 200, 255);
             }
 
-            //Frame
             frame.repaintDrawPanel();
 
             try {

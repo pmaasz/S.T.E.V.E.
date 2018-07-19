@@ -1,4 +1,3 @@
-import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
@@ -10,11 +9,7 @@ public class Frame extends JFrame
 
     protected int widthleft = 80;
 
-    protected int heightleft = 90;
-
     protected int widthright = 80;
-
-    protected int heightright = 90;
 
     protected int counter = 0;
 
@@ -83,40 +78,5 @@ public class Frame extends JFrame
     public void setClick(boolean click)
     {
         this.click = click;
-    }
-
-    private class KeyHandler implements MouseMotionListener, MouseListener
-    {
-
-        @Override
-        public void mouseDragged(MouseEvent e) { }
-
-        @Override
-        public void mouseMoved(MouseEvent e)
-        {
-            setMouseX(e.getX());
-            setMouseY(e.getY());
-        }
-
-        @Override
-        public void mouseClicked(MouseEvent e) { }
-
-        @Override
-        public void mousePressed(MouseEvent e)
-        {
-            setClick(true);
-        }
-
-        @Override
-        public void mouseReleased(MouseEvent e)
-        {
-            setClick(false);
-        }
-
-        @Override
-        public void mouseEntered(MouseEvent e) { }
-
-        @Override
-        public void mouseExited(MouseEvent e) { }
     }
 }

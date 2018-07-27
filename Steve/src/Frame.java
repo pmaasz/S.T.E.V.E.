@@ -11,8 +11,6 @@ public class Frame extends JFrame
 
     protected int widthright = 80;
 
-    protected int counter = 0;
-
     protected boolean blink = false;
 
     protected double mouseX;

@@ -14,7 +14,11 @@ public class Steve {
         {
             int i; //iterator
             int leftYPos = leftEye.getLeftYPos();
+            int leftXPos = leftEye.getLeftXPos();
             int rightYPos = rightEye.getRightYPos();
+            int counter = 0;
+
+            //System.out.println("hey");
 
             //Up and Down
             if((leftYPos > 90 || leftYPos < 30) && (rightYPos > 90 || rightYPos < 30))
@@ -26,36 +30,29 @@ public class Steve {
                 rightEye.setHeightright(90);
             }
 
-            if(frame.leftypos < 10) frame.leftypos = 10;				//Bounds
+            //Bounds
+            if(frame.leftypos < 10) frame.leftypos = 10;
 
             if(frame.leftypos > 110) frame.leftypos = 110;
 
-            for(i = 0; i < frame.mouseY;)
-            {							//Movement
-                if(frame.leftypos < frame.mouseY)
-                {
-                    frame.leftypos++;
-
-                    frame.repaintDrawPanel();
-                }
-
-                break;
-            }
-
-            for(i = 0; i < frame.mouseY;)
+            //Movement
+            if(frame.leftypos < frame.mouseY)
             {
-                if(frame.leftypos > frame.mouseY)
-                {
-                    frame.leftypos--;
-                    frame.repaintDrawPanel();
-                }
-
-                break;
+                frame.leftypos++;
+                frame.repaintDrawPanel();
             }
+
+            if(frame.leftypos > frame.mouseY)
+            {
+                frame.leftypos--;
+                frame.repaintDrawPanel();
+            }
+
+
 
             //Left and Right
             if(frame.leftxpos > 100)
-            {								//Resizing the eyes
+            {
                 frame.widthright = 70;
             } else {
                 frame.widthright = 80;
@@ -68,34 +65,27 @@ public class Steve {
                 frame.widthleft = 80;
             }
 
-            if(frame.leftxpos<10) frame.leftxpos = 10;					//Bounds
+            //Bounds
+            if(frame.leftxpos<10) frame.leftxpos = 10;
 
             if(frame.leftxpos>110) frame.leftxpos = 110;
 
-            for(i = 0; i < frame.mouseX;)
-            {							//Movement
-                if(frame.leftxpos < frame.mouseX)
-                {
-                    frame.leftxpos++;
-                    frame.repaintDrawPanel();
-                }
-
-                break;
-            }
-
-            for(i = 0; i < frame.mouseX;)
+            //Movement
+            if(frame.leftxpos < frame.mouseX)
             {
-                if(frame.leftxpos > frame.mouseX)
-                {
-                    frame.leftxpos--;
-                    frame.repaintDrawPanel();
-                }
-
-                break;
+                frame.leftxpos++;
+                frame.repaintDrawPanel();
             }
+
+            if(frame.leftxpos > frame.mouseX)
+            {
+                frame.leftxpos--;
+                frame.repaintDrawPanel();
+            }
+
 
             //blinking
-            repo.blink(frame);
+            repo.blink(frame, counter);
 
             //look angry
             if(frame.isClick())

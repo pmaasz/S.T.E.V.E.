@@ -12,16 +12,25 @@ public class Steve {
         //Graphic
         while(true)
         {
-            int i; //iterator
-            int leftYPos = leftEye.getLeftYPos();
-            int leftXPos = leftEye.getLeftXPos();
-            int rightYPos = rightEye.getRightYPos();
+            int iterator;
             int counter = 0;
 
-            //System.out.println("hey");
+            //LeftEye-boundaries
+            if(leftEye.getLeftYPos() < 10) leftEye.setLeftYPos(10);
+            if(leftEye.getLeftYPos() > 110) leftEye.setLeftYPos(110);
+            if(leftEye.getLeftXPos() < 10) leftEye.setLeftXPos(10);
+            if(leftEye.getLeftXPos() > 110) leftEye.setLeftXPos(110);
+
+            //RightEye-boundaries
+            if(rightEye.getRightYPos() < 10) rightEye.setRightYPos(10);
+            if(rightEye.getRightYPos() > 110) rightEye.setRightYPos(110);
+            if(rightEye.getRightXPos() < 10) rightEye.setRightXPos(110);
+            if(rightEye.getRightXPos() > 110) rightEye.setRightYPos(10);
+
+            System.out.println("success");
 
             //Up and Down
-            if((leftYPos > 90 || leftYPos < 30) && (rightYPos > 90 || rightYPos < 30))
+            if((leftEye.getLeftYPos() > 90 || leftEye.getLeftYPos() < 30) && (rightEye.getRightYPos() > 90 || rightEye.getRightYPos() < 30))
             {
                 rightEye.setHeightright(70);
                 leftEye.setHeightleft(70);
@@ -29,11 +38,6 @@ public class Steve {
                 leftEye.setHeightleft(90);
                 rightEye.setHeightright(90);
             }
-
-            //Bounds
-            if(frame.leftypos < 10) frame.leftypos = 10;
-
-            if(frame.leftypos > 110) frame.leftypos = 110;
 
             //Movement
             if(frame.leftypos < frame.mouseY)
@@ -47,8 +51,6 @@ public class Steve {
                 frame.leftypos--;
                 frame.repaintDrawPanel();
             }
-
-
 
             //Left and Right
             if(frame.leftxpos > 100)
@@ -65,11 +67,6 @@ public class Steve {
                 frame.widthleft = 80;
             }
 
-            //Bounds
-            if(frame.leftxpos<10) frame.leftxpos = 10;
-
-            if(frame.leftxpos>110) frame.leftxpos = 110;
-
             //Movement
             if(frame.leftxpos < frame.mouseX)
             {
@@ -82,7 +79,6 @@ public class Steve {
                 frame.leftxpos--;
                 frame.repaintDrawPanel();
             }
-
 
             //blinking
             repo.blink(frame, counter);

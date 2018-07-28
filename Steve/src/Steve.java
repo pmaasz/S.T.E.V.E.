@@ -12,7 +12,6 @@ public class Steve {
         //Graphic
         while(true)
         {
-            int iterator;
             int counter = 0;
 
             //LeftEye-boundaries
@@ -27,63 +26,88 @@ public class Steve {
             if(rightEye.getRightXPos() < 10) rightEye.setRightXPos(110);
             if(rightEye.getRightXPos() > 110) rightEye.setRightYPos(10);
 
-            System.out.println("success");
-
-            //Up and Down
+            //resizing eyes
             if((leftEye.getLeftYPos() > 90 || leftEye.getLeftYPos() < 30) && (rightEye.getRightYPos() > 90 || rightEye.getRightYPos() < 30))
             {
                 rightEye.setHeightright(70);
                 leftEye.setHeightleft(70);
+
             } else {
                 leftEye.setHeightleft(90);
                 rightEye.setHeightright(90);
             }
 
-            //Movement
-            if(frame.leftypos < frame.mouseY)
+            //has to be dependent of the right ey xpos
+            if(leftEye.getLeftXPos() > 100)
             {
-                frame.leftypos++;
-                frame.repaintDrawPanel();
-            }
-
-            if(frame.leftypos > frame.mouseY)
-            {
-                frame.leftypos--;
-                frame.repaintDrawPanel();
-            }
-
-            //Left and Right
-            if(frame.leftxpos > 100)
-            {
-                frame.widthright = 70;
+                rightEye.setWidthright(70);
             } else {
-                frame.widthright = 80;
+                rightEye.setWidthright(80);
             }
 
-            if(frame.leftxpos < 25)
+            if(leftEye.getLeftXPos() < 25)
             {
-                frame.widthleft = 70;
+                leftEye.setLeftXPos(70);
             } else {
-                frame.widthleft = 80;
+                leftEye.setLeftXPos(80);
             }
 
-            //Movement
-            if(frame.leftxpos < frame.mouseX)
+            //moving up
+            if(leftEye.getLeftYPos() < frame.mouseY && rightEye.getRightYPos() < frame.mouseY)
             {
-                frame.leftxpos++;
+                System.out.println("Up");
+                int leftYPos = leftEye.getLeftYPos();
+                int rightYPos = rightEye.getRightYPos();
+                leftYPos++;
+                rightYPos++;
+                leftEye.setLeftYPos(leftYPos);
+                rightEye.setRightYPos(rightYPos);
                 frame.repaintDrawPanel();
             }
 
-            if(frame.leftxpos > frame.mouseX)
+            //moving down
+            if(leftEye.getLeftYPos() > frame.mouseY && rightEye.getRightYPos() > frame.mouseY)
             {
-                frame.leftxpos--;
+                System.out.println("Down");
+                int leftYPos = leftEye.getLeftYPos();
+                int rightYPos = rightEye.getRightYPos();
+                leftYPos--;
+                rightYPos--;
+                leftEye.setLeftYPos(leftYPos);
+                rightEye.setRightYPos(rightYPos);
+                frame.repaintDrawPanel();
+            }
+
+            //moving right
+            if(leftEye.getLeftXPos() < frame.mouseX && rightEye.getRightXPos() < frame.mouseX)
+            {
+                System.out.println("Right");
+                int leftXPos = leftEye.getLeftXPos();
+                int rightXPos = rightEye.getRightXPos();
+                leftXPos++;
+                rightXPos++;
+                leftEye.setLeftXPos(leftXPos);
+                rightEye.setRightXPos(rightXPos);
+                frame.repaintDrawPanel();
+            }
+
+            //moving left
+            if(leftEye.getLeftXPos() > frame.mouseX && rightEye.getRightXPos() > frame.mouseX)
+            {
+                System.out.println("Left");
+                int leftXPos = leftEye.getLeftXPos();
+                int rightXPos = rightEye.getRightXPos();
+                leftXPos--;
+                rightXPos--;
+                leftEye.setLeftXPos(leftXPos);
+                rightEye.setRightXPos(rightXPos);
                 frame.repaintDrawPanel();
             }
 
             //blinking
             repo.blink(frame, counter);
 
-            //look angry
+            //looking angry
             if(frame.isClick())
             {
                 eyes.setColor(255,30,30);

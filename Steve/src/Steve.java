@@ -29,6 +29,7 @@ public class Steve {
             //resizing eyes
             if((leftEye.getLeftYPos() > 90 || leftEye.getLeftYPos() < 30) && (rightEye.getRightYPos() > 90 || rightEye.getRightYPos() < 30))
             {
+                System.out.println("height");
                 rightEye.setHeightright(70);
                 leftEye.setHeightleft(70);
 
@@ -37,9 +38,10 @@ public class Steve {
                 rightEye.setHeightright(90);
             }
 
-            //has to be dependent of the right ey xpos
+            //has to be dependent of the right eye xpos
             if(leftEye.getLeftXPos() > 100)
             {
+                System.out.println("right width");
                 rightEye.setWidthright(70);
             } else {
                 rightEye.setWidthright(80);
@@ -47,6 +49,7 @@ public class Steve {
 
             if(leftEye.getLeftXPos() < 25)
             {
+                System.out.println("left width");
                 leftEye.setLeftXPos(70);
             } else {
                 leftEye.setLeftXPos(80);
@@ -55,7 +58,7 @@ public class Steve {
             //moving up
             if(leftEye.getLeftYPos() < frame.mouseY && rightEye.getRightYPos() < frame.mouseY)
             {
-                System.out.println("Up");
+                System.out.println("up");
                 int leftYPos = leftEye.getLeftYPos();
                 int rightYPos = rightEye.getRightYPos();
                 leftYPos++;
@@ -68,7 +71,7 @@ public class Steve {
             //moving down
             if(leftEye.getLeftYPos() > frame.mouseY && rightEye.getRightYPos() > frame.mouseY)
             {
-                System.out.println("Down");
+                System.out.println("down");
                 int leftYPos = leftEye.getLeftYPos();
                 int rightYPos = rightEye.getRightYPos();
                 leftYPos--;
@@ -81,7 +84,7 @@ public class Steve {
             //moving right
             if(leftEye.getLeftXPos() < frame.mouseX && rightEye.getRightXPos() < frame.mouseX)
             {
-                System.out.println("Right");
+                System.out.println("right");
                 int leftXPos = leftEye.getLeftXPos();
                 int rightXPos = rightEye.getRightXPos();
                 leftXPos++;
@@ -94,7 +97,7 @@ public class Steve {
             //moving left
             if(leftEye.getLeftXPos() > frame.mouseX && rightEye.getRightXPos() > frame.mouseX)
             {
-                System.out.println("Left");
+                System.out.println("left");
                 int leftXPos = leftEye.getLeftXPos();
                 int rightXPos = rightEye.getRightXPos();
                 leftXPos--;

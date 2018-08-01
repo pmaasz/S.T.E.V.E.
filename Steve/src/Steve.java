@@ -12,15 +12,9 @@ public class Steve {
         {
             int counter = 0;
 /*
-            //LeftEye-boundaries
-            if(leftEye.getLeftYPos() < 10) leftEye.setLeftYPos(10);
-            if(leftEye.getLeftYPos() > 110) leftEye.setLeftYPos(110);
+            //boundaries
             if(leftEye.getLeftXPos() < 10) leftEye.setLeftXPos(10);
             if(leftEye.getLeftXPos() > 110) leftEye.setLeftXPos(110);
-
-            //RightEye-boundaries
-            if(rightEye.getRightYPos() < 10) rightEye.setRightYPos(10);
-            if(rightEye.getRightYPos() > 110) rightEye.setRightYPos(110);
             if(rightEye.getRightXPos() < 10) rightEye.setRightXPos(110);
             if(rightEye.getRightXPos() > 110) rightEye.setRightYPos(10);
 */
@@ -36,6 +30,29 @@ public class Steve {
                 rightEye.setHeightright(90);
                 frame.repaintDrawPanel();
             }
+
+            //upper boundary
+            if(leftEye.getLeftYPos() > 110)
+            {
+                leftEye.setLeftYPos(110);
+            }
+
+            if(rightEye.getRightYPos() > 110)
+            {
+                rightEye.setRightYPos(110);
+            }
+
+            //lower boundary
+            if(leftEye.getLeftYPos() < 10)
+            {
+                leftEye.setLeftYPos(10);
+            }
+
+            if(rightEye.getRightYPos() < 10)
+            {
+                rightEye.setRightYPos(10);
+            }
+
 /*
             //has to be dependent of the right eye xpos
             if(leftEye.getRightXPos() > 100)

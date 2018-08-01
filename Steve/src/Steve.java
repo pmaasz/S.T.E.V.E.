@@ -15,38 +15,38 @@ public class Steve {
             {
                 rightEye.setHeightright(70);
                 leftEye.setHeightleft(70);
-                frame.repaintDrawPanel();
+                //frame.repaintDrawPanel();
 
             } else {
                 leftEye.setHeightleft(90);
                 rightEye.setHeightright(90);
-                frame.repaintDrawPanel();
+                //frame.repaintDrawPanel();
             }
 
             //upper boundary
             if(leftEye.getLeftYPos() > 110)
             {
                 leftEye.setLeftYPos(110);
-                frame.repaintDrawPanel();
+                //frame.repaintDrawPanel();
             }
 
             if(rightEye.getRightYPos() > 110)
             {
                 rightEye.setRightYPos(110);
-                frame.repaintDrawPanel();
+                //frame.repaintDrawPanel();
             }
 
             //lower boundary
             if(leftEye.getLeftYPos() < 10)
             {
                 leftEye.setLeftYPos(10);
-                frame.repaintDrawPanel();
+                //frame.repaintDrawPanel();
             }
 
             if(rightEye.getRightYPos() < 10)
             {
                 rightEye.setRightYPos(10);
-                frame.repaintDrawPanel();
+                //frame.repaintDrawPanel();
             }
 
             //moving up
@@ -58,7 +58,7 @@ public class Steve {
                 rightYPos++;
                 leftEye.setLeftYPos(leftYPos);
                 rightEye.setRightYPos(rightYPos);
-                frame.repaintDrawPanel();
+                //frame.repaintDrawPanel();
             }
 
             //moving down
@@ -70,52 +70,52 @@ public class Steve {
                 rightYPos--;
                 leftEye.setLeftYPos(leftYPos);
                 rightEye.setRightYPos(rightYPos);
-                frame.repaintDrawPanel();
+                //frame.repaintDrawPanel();
             }
 
             //resizing width
             if(leftEye.getLeftXPos() < 25)
             {
                 leftEye.setWidthleft(70);
-                frame.repaintDrawPanel();
+                //frame.repaintDrawPanel();
             } else {
                 leftEye.setWidthleft(80);
-                frame.repaintDrawPanel();
+                //frame.repaintDrawPanel();
             }
 
             if(rightEye.getRightXPos() > 200)
             {
                 rightEye.setWidthright(70);
-                frame.repaintDrawPanel();
+                //frame.repaintDrawPanel();
             } else {
                 rightEye.setWidthright(80);
-                frame.repaintDrawPanel();
+                //frame.repaintDrawPanel();
             }
 
             //left boundary
             if(leftEye.getLeftXPos() < 10)
             {
                 leftEye.setLeftXPos(10);
-                frame.repaintDrawPanel();
+                //frame.repaintDrawPanel();
             }
 
             if(rightEye.getRightXPos() < 110)
             {
                 rightEye.setRightXPos(110);
-                frame.repaintDrawPanel();
+                //frame.repaintDrawPanel();
             }
 
             //right boundary
             if(leftEye.getLeftXPos() > 110)
             {
                 leftEye.setLeftXPos(110);
-                frame.repaintDrawPanel();
+                //frame.repaintDrawPanel();
             }
 
             if(rightEye.getRightXPos() > 210)
             {
                 rightEye.setRightXPos(210);
-                frame.repaintDrawPanel();
+                //frame.repaintDrawPanel();
             }
 
             //moving right
@@ -127,7 +127,7 @@ public class Steve {
                 rightXPos++;
                 leftEye.setLeftXPos(leftXPos);
                 rightEye.setRightXPos(rightXPos);
-                frame.repaintDrawPanel();
+                //frame.repaintDrawPanel();
             }
 
             //moving left
@@ -139,7 +139,7 @@ public class Steve {
                 rightXPos--;
                 leftEye.setLeftXPos(leftXPos);
                 rightEye.setRightXPos(rightXPos);
-                frame.repaintDrawPanel();
+                //frame.repaintDrawPanel();
             }
 
             //looking angry

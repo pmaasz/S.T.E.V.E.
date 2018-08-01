@@ -14,6 +14,7 @@ public class DrawPanel extends JPanel
         this.leftEye = leftEye;
         this.rightEye = rightEye;
         this.eyes = eyes;
+
     }
 
     public void paintComponent(Graphics g)

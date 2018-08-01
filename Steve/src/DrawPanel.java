@@ -9,11 +9,11 @@ public class DrawPanel extends JPanel
 
     private Eyes eyes;
 
-    public DrawPanel()
+    public DrawPanel(LeftEye leftEye, RightEye rightEye, Eyes eyes)
     {
-        this.leftEye = new LeftEye();
-        this.rightEye = new RightEye();
-        this.eyes = new Eyes();
+        this.leftEye = leftEye;
+        this.rightEye = rightEye;
+        this.eyes = eyes;
     }
 
     public void paintComponent(Graphics g)

@@ -1,5 +1,7 @@
 import java.awt.event.*;
 import javax.swing.*;
+import javax.swing.*;
+import java.awt.*;
 
 public class Frame extends JFrame
 {
@@ -14,14 +16,15 @@ public class Frame extends JFrame
     protected DrawPanel drawPanel;
 
 
-    public Frame()
+    public Frame(LeftEye leftEye, RightEye rightEye, Eyes eyes)
     {
-        this.drawPanel = new DrawPanel();
+        this.drawPanel = new DrawPanel(leftEye,  rightEye,  eyes);
 
         add(this.drawPanel);
         pack();
         setSize(300,300);
         setLocationRelativeTo(null);
+
         setVisible(true);
         setTitle("S.T.E.V.E.");
         addMouseMotionListener(new KeyHandler());

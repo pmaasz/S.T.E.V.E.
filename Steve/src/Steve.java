@@ -3,11 +3,12 @@ public class Steve {
 
     public static void main (String[] args)
     {
-        Frame frame = new Frame();
+
         Eyes eyes = new Eyes();
         LeftEye leftEye = new LeftEye();
         RightEye rightEye = new RightEye();
         Repo repo = new Repo();
+        Frame frame = new Frame(leftEye,  rightEye,  eyes);
 
         //Graphic
         while(true)

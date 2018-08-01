@@ -24,26 +24,28 @@ public class Steve {
             if(rightEye.getRightXPos() < 10) rightEye.setRightXPos(110);
             if(rightEye.getRightXPos() > 110) rightEye.setRightYPos(10);
 */
-/*
-            //resizing eyes
+            //resizing height
             if((leftEye.getLeftYPos() > 90 || leftEye.getLeftYPos() < 30) && (rightEye.getRightYPos() > 90 || rightEye.getRightYPos() < 30))
             {
                 rightEye.setHeightright(70);
                 leftEye.setHeightleft(70);
+                frame.repaintDrawPanel();
 
             } else {
                 leftEye.setHeightleft(90);
                 rightEye.setHeightright(90);
+                frame.repaintDrawPanel();
             }
-
+/*
             //has to be dependent of the right eye xpos
-            if(leftEye.getLeftXPos() > 100)
+            if(leftEye.getRightXPos() > 100)
             {
                 rightEye.setWidthright(70);
             } else {
                 rightEye.setWidthright(80);
             }
 
+            //has to be dependent of the left eye xpos
             if(leftEye.getLeftXPos() < 25)
             {
                 leftEye.setLeftXPos(70);
@@ -100,16 +102,7 @@ public class Steve {
             }
 */
             //blinking
-            //repo.blink(frame, counter);
-
-            counter++;
-            if (eyes.isBlink() && counter > 100) {
-                eyes.setBlink(false);
-                counter = 0;
-            } else if (counter > 1100) {
-                eyes.setBlink(true);
-                counter = 0;
-            }
+            repo.blink(eyes, counter);
 
             //looking angry
             if(frame.isClick())

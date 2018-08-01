@@ -10,8 +10,6 @@ public class Steve {
 
         while(true)
         {
-            int counter = 0;
-
             //resizing height
             if((leftEye.getLeftYPos() > 90 || leftEye.getLeftYPos() < 30) && (rightEye.getRightYPos() > 90 || rightEye.getRightYPos() < 30))
             {
@@ -144,17 +142,13 @@ public class Steve {
                 frame.repaintDrawPanel();
             }
 
-            //blinking
-            repo.blink(eyes, counter);
-
             //looking angry
-            if(frame.isClick())
-            {
-                eyes.setColor(255,30,30);
-            } else {
-                eyes.setColor(10, 200, 255);
-            }
+            repo.angry(frame, eyes);
 
+            //blinking
+            repo.blink(eyes, frame);
+
+            //repainting the JPanel
             frame.repaintDrawPanel();
 
             try {

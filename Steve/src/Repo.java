@@ -1,17 +1,36 @@
-
 public class Repo
 {
-    public int blink(Eyes eyes, int counter)
+    public void blink(Eyes eyes, Frame frame)
     {
-        counter++;
-        if (eyes.isBlink() && counter > 100) {
-            eyes.setBlink(false);
-            counter = 0;
-        } else if (counter > 1100) {
+        int counter = frame.getCounter();
+
+        if (!eyes.isBlink() && ((counter % 1100) == 0))
+        {
             eyes.setBlink(true);
-            counter = 0;
+            eyes.setColor(0,0,0);
+
+            try {
+                Thread.sleep(300);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        else if (counter > 1100)
+        {
+            eyes.setBlink(false);
         }
 
-        return counter;
+        counter++;
+        frame.setCounter(counter);
+    }
+
+    public void angry(Frame frame, Eyes eyes)
+    {
+        if(frame.isClick())
+        {
+            eyes.setColor(255,30,30);
+        } else {
+            eyes.setColor(10, 200, 255);
+        }
     }
 }

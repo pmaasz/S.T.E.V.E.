@@ -27,15 +27,9 @@ public class DrawPanel extends JPanel
         //Blink
         if (this.eyes.isBlink())
         {
-            g.setColor(Color.BLACK);
+            g.setColor(eyes.getColor());
         } else {
             g.setColor(this.eyes.getColor());
-        }
-
-        try {
-            Thread.sleep(2);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         }
 
         //Left

@@ -9,6 +9,8 @@ public class Frame extends JFrame
 
     private boolean click;
 
+    private int counter = 0;
+
     protected DrawPanel drawPanel;
 
     public Frame(LeftEye leftEye, RightEye rightEye, Eyes eyes)
@@ -66,6 +68,14 @@ public class Frame extends JFrame
     public void setClick(boolean click)
     {
         this.click = click;
+    }
+
+    public int getCounter() {
+        return counter;
+    }
+
+    public void setCounter(int counter) {
+        this.counter = counter;
     }
 
     private class KeyHandler implements MouseMotionListener, MouseListener

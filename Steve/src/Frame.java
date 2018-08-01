@@ -18,6 +18,7 @@ public class Frame extends JFrame
         add(this.drawPanel);
         pack();
         setSize(300,300);
+        setResizable(false);
         setLocationRelativeTo(null);
         setVisible(true);
         setTitle("S.T.E.V.E.");

@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
@@ -12,6 +13,13 @@ public class Frame extends JFrame
     private int counter = 0;
 
     protected DrawPanel drawPanel;
+
+    /**
+     * GraphicsEnvironment is the Environment in which the window is placed
+     * @param leftEye
+     * @param rightEye
+     * @param eyes
+     */
 
     public Frame(LeftEye leftEye, RightEye rightEye, Eyes eyes)
     {

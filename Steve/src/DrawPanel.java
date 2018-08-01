@@ -14,7 +14,6 @@ public class DrawPanel extends JPanel
         this.leftEye = leftEye;
         this.rightEye = rightEye;
         this.eyes = eyes;
-
     }
 
     public void paintComponent(Graphics g)
@@ -22,7 +21,8 @@ public class DrawPanel extends JPanel
         Graphics2D g2 = (Graphics2D)g;
 
         //Background
-        g2.setColor(Color.BLACK);
+        Color color = new Color(0, 0, 0, 255);
+        g2.setColor(color);
         g2.fillRect(0, 0, getWidth(), getHeight());
 
         //Blink

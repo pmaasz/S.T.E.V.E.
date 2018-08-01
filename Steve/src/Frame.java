@@ -3,21 +3,13 @@ import javax.swing.*;
 
 public class Frame extends JFrame
 {
-    protected int leftxpos = 55;
-
-    protected int leftypos = 40;
-
-    protected int widthleft = 80;
-
-    protected int widthright = 80;
-
     protected boolean blink = false;
 
-    protected double mouseX;
+    private double mouseX;
 
-    protected double mouseY;
+    private double mouseY;
 
-    protected boolean click;
+    private boolean click;
 
     protected DrawPanel drawPanel;
 
@@ -26,7 +18,7 @@ public class Frame extends JFrame
     {
         this.drawPanel = new DrawPanel();
 
-        add(drawPanel);
+        add(this.drawPanel);
         pack();
         setSize(300,300);
         setLocationRelativeTo(null);
@@ -76,6 +68,14 @@ public class Frame extends JFrame
     public void setClick(boolean click)
     {
         this.click = click;
+    }
+
+    public boolean isBlink() {
+        return blink;
+    }
+
+    public void setBlink(boolean blink) {
+        this.blink = blink;
     }
 
     private class KeyHandler implements MouseMotionListener, MouseListener

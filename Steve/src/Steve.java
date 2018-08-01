@@ -56,7 +56,7 @@ public class Steve {
             }
 
             //moving up
-            if(leftEye.getLeftYPos() < frame.mouseY && rightEye.getRightYPos() < frame.mouseY)
+            if(leftEye.getLeftYPos() < frame.getMouseY() && rightEye.getRightYPos() < frame.getMouseY())
             {
                 System.out.println("up");
                 int leftYPos = leftEye.getLeftYPos();
@@ -69,7 +69,7 @@ public class Steve {
             }
 
             //moving down
-            if(leftEye.getLeftYPos() > frame.mouseY && rightEye.getRightYPos() > frame.mouseY)
+            if(leftEye.getLeftYPos() > frame.getMouseY() && rightEye.getRightYPos() > frame.getMouseY())
             {
                 System.out.println("down");
                 int leftYPos = leftEye.getLeftYPos();
@@ -82,7 +82,7 @@ public class Steve {
             }
 
             //moving right
-            if(leftEye.getLeftXPos() < frame.mouseX && rightEye.getRightXPos() < frame.mouseX)
+            if(leftEye.getLeftXPos() < frame.getMouseX() && rightEye.getRightXPos() < frame.getMouseX())
             {
                 System.out.println("right");
                 int leftXPos = leftEye.getLeftXPos();
@@ -95,7 +95,7 @@ public class Steve {
             }
 
             //moving left
-            if(leftEye.getLeftXPos() > frame.mouseX && rightEye.getRightXPos() > frame.mouseX)
+            if(leftEye.getLeftXPos() > frame.getMouseX() && rightEye.getRightXPos() > frame.getMouseX())
             {
                 System.out.println("left");
                 int leftXPos = leftEye.getLeftXPos();

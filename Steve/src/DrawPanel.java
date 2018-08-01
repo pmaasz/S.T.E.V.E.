@@ -25,11 +25,11 @@ public class DrawPanel extends JPanel
         g2.fillRect(0, 0, getWidth(), getHeight());
 
         //Blink
-        if (eyes.isBlink())
+        if (this.eyes.isBlink())
         {
             g.setColor(Color.BLACK);
         } else {
-            g.setColor(eyes.getColor());
+            g.setColor(this.eyes.getColor());
         }
 
         try {
@@ -39,11 +39,11 @@ public class DrawPanel extends JPanel
         }
 
         //Left
-        g2.drawRoundRect(leftEye.getLeftXPos(),leftEye.getLeftYPos(), leftEye.getWidthleft(), leftEye.getHeightleft(), eyes.getCurve(), eyes.getCurve());
-        g2.fillRoundRect(leftEye.getLeftXPos(),leftEye.getLeftYPos(), leftEye.getWidthleft(), leftEye.getHeightleft(), eyes.getCurve(), eyes.getCurve());
+        g2.drawRoundRect(this.leftEye.getLeftXPos(),this.leftEye.getLeftYPos(), this.leftEye.getWidthleft(), this.leftEye.getHeightleft(), this.eyes.getCurve(), this.eyes.getCurve());
+        g2.fillRoundRect(this.leftEye.getLeftXPos(),this.leftEye.getLeftYPos(), this.leftEye.getWidthleft(), this.leftEye.getHeightleft(), this.eyes.getCurve(), this.eyes.getCurve());
 
         //Right
-        g2.drawRoundRect(rightEye.getRightXPos(),rightEye.getRightYPos(), rightEye.getWidthright(), rightEye.getHeightright(), eyes.getCurve(), eyes.getCurve());
-        g2.fillRoundRect(rightEye.getRightXPos(),rightEye.getRightYPos(), rightEye.getWidthright(), rightEye.getHeightright(), eyes.getCurve(), eyes.getCurve());
+        g2.drawRoundRect(this.rightEye.getRightXPos(),this.rightEye.getRightYPos(), this.rightEye.getWidthright(), this.rightEye.getHeightright(), this.eyes.getCurve(), this.eyes.getCurve());
+        g2.fillRoundRect(this.rightEye.getRightXPos(),this.rightEye.getRightYPos(), this.rightEye.getWidthright(), this.rightEye.getHeightright(), this.eyes.getCurve(), this.eyes.getCurve());
     }
 }

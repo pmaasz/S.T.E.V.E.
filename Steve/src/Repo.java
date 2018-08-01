@@ -5,12 +5,12 @@ public class Repo
     {
         counter++;
 
-        if (frame.blink && counter > 100)
+        if (frame.isBlink() && counter > 100)
         {
-            frame.blink = false;
+            frame.setBlink(false);
         } else if (counter > 1100)
         {
-            frame.blink = true;
+            frame.setBlink(true);
         }
     }
 }

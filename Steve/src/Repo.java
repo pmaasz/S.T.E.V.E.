@@ -1,16 +1,8 @@
 
 public class Repo
 {
-    public void blink(Frame frame, int counter)
+    public void blink(Eyes eyes, int counter)
     {
-        counter++;
 
-        if (frame.isBlink() && counter > 100)
-        {
-            frame.setBlink(false);
-        } else if (counter > 1100)
-        {
-            frame.setBlink(true);
-        }
     }
 }

@@ -100,7 +100,16 @@ public class Steve {
             }
 */
             //blinking
-            repo.blink(frame, counter);
+            //repo.blink(frame, counter);
+
+            counter++;
+            if (eyes.isBlink() && counter > 100) {
+                eyes.setBlink(false);
+                counter = 0;
+            } else if (counter > 1100) {
+                eyes.setBlink(true);
+                counter = 0;
+            }
 
             //looking angry
             if(frame.isClick())

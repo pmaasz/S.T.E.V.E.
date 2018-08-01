@@ -3,8 +3,6 @@ import javax.swing.*;
 
 public class Frame extends JFrame
 {
-    protected boolean blink = false;
-
     private double mouseX;
 
     private double mouseY;
@@ -12,7 +10,6 @@ public class Frame extends JFrame
     private boolean click;
 
     protected DrawPanel drawPanel;
-
 
     public Frame(LeftEye leftEye, RightEye rightEye, Eyes eyes)
     {
@@ -22,7 +19,6 @@ public class Frame extends JFrame
         pack();
         setSize(300,300);
         setLocationRelativeTo(null);
-
         setVisible(true);
         setTitle("S.T.E.V.E.");
         addMouseMotionListener(new KeyHandler());
@@ -69,14 +65,6 @@ public class Frame extends JFrame
     public void setClick(boolean click)
     {
         this.click = click;
-    }
-
-    public boolean isBlink() {
-        return blink;
-    }
-
-    public void setBlink(boolean blink) {
-        this.blink = blink;
     }
 
     private class KeyHandler implements MouseMotionListener, MouseListener

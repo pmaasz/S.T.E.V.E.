@@ -111,6 +111,12 @@ public class Repo
         if(frame.isClick())
         {
             eyes.setColor(255,30,30);
+            frame.repaintDrawPanel();
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         } else {
             eyes.setColor(10, 200, 255);
         }

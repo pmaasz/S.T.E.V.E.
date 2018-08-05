@@ -111,6 +111,11 @@ public class Repo
         if(frame.isClick())
         {
             eyes.setColor(255,30,30);
+
+            int count = frame.getClickCounter();
+
+            count++;
+            frame.setClickCounter(count);
             frame.repaintDrawPanel();
             try {
                 Thread.sleep(1000);

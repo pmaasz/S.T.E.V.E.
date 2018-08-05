@@ -12,6 +12,8 @@ public class Frame extends JFrame
 
     private int counter = 0;
 
+    private int clickCounter = 0;
+
     protected DrawPanel drawPanel;
 
     /**
@@ -72,12 +74,23 @@ public class Frame extends JFrame
         this.click = click;
     }
 
-    public int getCounter() {
+    public int getCounter()
+    {
         return counter;
     }
 
     public void setCounter(int counter) {
         this.counter = counter;
+    }
+
+    public int getClickCounter()
+    {
+        return clickCounter;
+    }
+
+    public void setClickCounter(int clickCounter)
+    {
+        this.clickCounter = clickCounter;
     }
 
     private class KeyHandler implements MouseMotionListener, MouseListener

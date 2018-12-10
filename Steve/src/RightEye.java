@@ -13,35 +13,43 @@ public class RightEye
 
     }
 
-    public int getRightXPos() {
+    public int getRightXPos()
+    {
         return rightXPos;
     }
 
-    public void setRightXPos(int rightXPos) {
+    public void setRightXPos(int rightXPos)
+    {
         this.rightXPos = rightXPos;
     }
 
-    public int getRightYPos() {
+    public int getRightYPos()
+    {
         return rightYPos;
     }
 
-    public void setRightYPos(int rightYPos) {
+    public void setRightYPos(int rightYPos)
+    {
         this.rightYPos = rightYPos;
     }
 
-    public int getWidthright() {
+    public int getWidthright()
+    {
         return widthright;
     }
 
-    public void setWidthright(int widthright) {
+    public void setWidthright(int widthright)
+    {
         this.widthright = widthright;
     }
 
-    public int getHeightright() {
+    public int getHeightright()
+    {
         return heightright;
     }
 
-    public void setHeightright(int heightright) {
+    public void setHeightright(int heightright)
+    {
         this.heightright = heightright;
     }
 }

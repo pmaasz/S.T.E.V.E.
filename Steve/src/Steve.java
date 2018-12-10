@@ -1,5 +1,5 @@
-public class Steve {
-
+public class Steve
+{
     public static void main (String[] args)
     {
         Eyes eyes = new Eyes();

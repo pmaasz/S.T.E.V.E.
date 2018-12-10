@@ -6,8 +6,10 @@ public class Repo
         {
             int leftYPos = leftEye.getLeftYPos();
             int rightYPos = rightEye.getRightYPos();
+
             leftYPos++;
             rightYPos++;
+
             leftEye.setLeftYPos(leftYPos);
             rightEye.setRightYPos(rightYPos);
         }
@@ -19,8 +21,10 @@ public class Repo
         {
             int leftYPos = leftEye.getLeftYPos();
             int rightYPos = rightEye.getRightYPos();
+
             leftYPos--;
             rightYPos--;
+
             leftEye.setLeftYPos(leftYPos);
             rightEye.setRightYPos(rightYPos);
         }
@@ -32,8 +36,10 @@ public class Repo
         {
             int leftXPos = leftEye.getLeftXPos();
             int rightXPos = rightEye.getRightXPos();
+
             leftXPos++;
             rightXPos++;
+
             leftEye.setLeftXPos(leftXPos);
             rightEye.setRightXPos(rightXPos);
         }
@@ -45,8 +51,10 @@ public class Repo
         {
             int leftXPos = leftEye.getLeftXPos();
             int rightXPos = rightEye.getRightXPos();
+
             leftXPos--;
             rightXPos--;
+
             leftEye.setLeftXPos(leftXPos);
             rightEye.setRightXPos(rightXPos);
         }
@@ -75,7 +83,6 @@ public class Repo
         {
             rightEye.setHeightright(70);
             leftEye.setHeightleft(70);
-
         } else {
             leftEye.setHeightleft(90);
             rightEye.setHeightright(90);
@@ -91,6 +98,7 @@ public class Repo
             eyes.setColor(0,0,0);
             eyes.setBlink(true);
             frame.repaintDrawPanel();
+
             try {
                 Thread.sleep(500);
             } catch (InterruptedException e) {
@@ -117,6 +125,7 @@ public class Repo
             count++;
             frame.setClickCounter(count);
             frame.repaintDrawPanel();
+
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {

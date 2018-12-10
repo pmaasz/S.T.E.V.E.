@@ -22,7 +22,6 @@ public class Frame extends JFrame
      * @param rightEye
      * @param eyes
      */
-
     public Frame(LeftEye leftEye, RightEye rightEye, Eyes eyes)
     {
         this.drawPanel = new DrawPanel(leftEye,  rightEye,  eyes);

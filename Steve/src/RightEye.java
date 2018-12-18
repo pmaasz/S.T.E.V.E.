@@ -1,16 +1,19 @@
 public class RightEye
 {
-    private int rightXPos = 155;
+    private int rightXPos;
 
-    private int rightYPos = 40;
+    private int rightYPos;
 
-    private int widthright = 80;
+    private int widthright;
 
-    private int heightright = 90;
+    private int heightright;
 
     public RightEye()
     {
-
+        this.rightXPos = 155;
+        this.rightYPos = 40;
+        this.widthright = 80;
+        this.heightright = 90;
     }
 
     public int getRightXPos()

@@ -1,16 +1,22 @@
 public class LeftEye
 {
-    private int leftXPos = 55;
+    private int leftXPos;
 
-    private int leftYPos = 40;
+    private int leftYPos;
 
-    private int widthleft = 80;
+    private int widthleft;
 
-    private int heightleft = 90;
+    private int heightleft;
 
     public LeftEye ()
     {
+        this.leftXPos = 55;
 
+        this.leftYPos = 40;
+
+        this.widthleft = 80;
+
+        this.heightleft = 90;
     }
 
     public int getLeftXPos()

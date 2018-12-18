@@ -1,4 +1,3 @@
-import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
@@ -94,7 +93,6 @@ public class Frame extends JFrame
 
     private class KeyHandler implements MouseMotionListener, MouseListener
     {
-
         @Override
         public void mouseDragged(MouseEvent e) { }
 

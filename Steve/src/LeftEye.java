@@ -11,11 +11,8 @@ public class LeftEye
     public LeftEye ()
     {
         this.leftXPos = 55;
-
         this.leftYPos = 40;
-
         this.widthleft = 80;
-
         this.heightleft = 90;
     }
 

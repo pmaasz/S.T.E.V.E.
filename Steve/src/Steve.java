@@ -1,11 +1,5 @@
 public class Steve
 {
-    //private Eyes eyes;
-
-    //private LeftEye leftEye;
-
-    //private RightEye rightEye;
-
     private Eye rightEye;
 
     private Eye leftEye;
@@ -47,7 +41,7 @@ public class Steve
             steve.repo.resizeWidth(steve.leftEye, steve.rightEye);
 
             //looking angry
-            steve.repo.angry(steve.frame, steve.eyes);
+            steve.repo.angry(steve.frame, steve.leftEye, steve.rightEye);
 
             //blinking
             steve.repo.blink(steve.leftEye, steve.rightEye, steve.frame);

@@ -1,91 +1,91 @@
 public class Repo
 {
-    public void movingUp(LeftEye leftEye, RightEye rightEye, Frame frame)
+    public void movingUp(Eye leftEye, Eye rightEye, Frame frame)
     {
-        if(leftEye.getLeftYPos() < frame.getMouseY() && rightEye.getRightYPos() < frame.getMouseY())
+        if(leftEye.getYPos() < frame.getMouseY() && rightEye.getYPos() < frame.getMouseY())
         {
-            int leftYPos = leftEye.getLeftYPos();
-            int rightYPos = rightEye.getRightYPos();
+            int leftYPos = leftEye.getYPos();
+            int rightYPos = rightEye.getYPos();
 
             leftYPos++;
             rightYPos++;
 
-            leftEye.setLeftYPos(leftYPos);
-            rightEye.setRightYPos(rightYPos);
+            leftEye.setYPos(leftYPos);
+            rightEye.setYPos(rightYPos);
         }
     }
 
-    public void movingDown(LeftEye leftEye, RightEye rightEye, Frame frame)
+    public void movingDown(Eye leftEye, Eye rightEye, Frame frame)
     {
-        if(leftEye.getLeftYPos() > frame.getMouseY() && rightEye.getRightYPos() > frame.getMouseY())
+        if(leftEye.getYPos() > frame.getMouseY() && rightEye.getYPos() > frame.getMouseY())
         {
-            int leftYPos = leftEye.getLeftYPos();
-            int rightYPos = rightEye.getRightYPos();
+            int leftYPos = leftEye.getYPos();
+            int rightYPos = rightEye.getYPos();
 
             leftYPos--;
             rightYPos--;
 
-            leftEye.setLeftYPos(leftYPos);
-            rightEye.setRightYPos(rightYPos);
+            leftEye.setYPos(leftYPos);
+            rightEye.setYPos(rightYPos);
         }
     }
 
-    public void movingRight(LeftEye leftEye, RightEye rightEye, Frame frame)
+    public void movingRight(Eye leftEye, Eye rightEye, Frame frame)
     {
-        if(leftEye.getLeftXPos() < frame.getMouseX() && rightEye.getRightXPos() < frame.getMouseX())
+        if(leftEye.getXPos() < frame.getMouseX() && rightEye.getXPos() < frame.getMouseX())
         {
-            int leftXPos = leftEye.getLeftXPos();
-            int rightXPos = rightEye.getRightXPos();
+            int leftXPos = leftEye.getXPos();
+            int rightXPos = rightEye.getXPos();
 
             leftXPos++;
             rightXPos++;
 
-            leftEye.setLeftXPos(leftXPos);
-            rightEye.setRightXPos(rightXPos);
+            leftEye.setXPos(leftXPos);
+            rightEye.setXPos(rightXPos);
         }
     }
 
-    public void movingLeft(LeftEye leftEye, RightEye rightEye, Frame frame)
+    public void movingLeft(Eye leftEye, Eye rightEye, Frame frame)
     {
-        if(leftEye.getLeftXPos() > frame.getMouseX() && rightEye.getRightXPos() > frame.getMouseX())
+        if(leftEye.getXPos() > frame.getMouseX() && rightEye.getXPos() > frame.getMouseX())
         {
-            int leftXPos = leftEye.getLeftXPos();
-            int rightXPos = rightEye.getRightXPos();
+            int leftXPos = leftEye.getXPos();
+            int rightXPos = rightEye.getXPos();
 
             leftXPos--;
             rightXPos--;
 
-            leftEye.setLeftXPos(leftXPos);
-            rightEye.setRightXPos(rightXPos);
+            leftEye.setXPos(leftXPos);
+            rightEye.setXPos(rightXPos);
         }
     }
 
-    public void resizeWidth(LeftEye leftEye, RightEye rightEye)
+    public void resizeWidth(Eye leftEye, Eye rightEye)
     {
-        if(leftEye.getLeftXPos() < 25)
+        if(leftEye.getXPos() < 25)
         {
-            leftEye.setWidthleft(70);
+            leftEye.setWidth(70);
         } else {
-            leftEye.setWidthleft(80);
+            leftEye.setWidth(80);
         }
 
-        if(rightEye.getRightXPos() > 200)
+        if(rightEye.getXPos() > 200)
         {
-            rightEye.setWidthright(70);
+            rightEye.setWidth(70);
         } else {
-            rightEye.setWidthright(80);
+            rightEye.setWidth(80);
         }
     }
 
-    public void resizeHeight(LeftEye leftEye, RightEye rightEye)
+    public void resizeHeight(Eye leftEye, Eye rightEye)
     {
-        if((leftEye.getLeftYPos() > 90 || leftEye.getLeftYPos() < 30) && (rightEye.getRightYPos() > 90 || rightEye.getRightYPos() < 30))
+        if((leftEye.getYPos() > 90 || leftEye.getYPos() < 30) && (rightEye.getYPos() > 90 || rightEye.getYPos() < 30))
         {
-            rightEye.setHeightright(70);
-            leftEye.setHeightleft(70);
+            rightEye.setHeight(70);
+            leftEye.setHeight(70);
         } else {
-            leftEye.setHeightleft(90);
-            rightEye.setHeightright(90);
+            leftEye.setHeight(90);
+            rightEye.setHeight(90);
         }
     }
 
@@ -100,7 +100,7 @@ public class Repo
 
             leftEye.setBlink(true);
             rightEye.setBlink(true);
-            
+
             frame.repaintDrawPanel();
 
             try {
@@ -111,18 +111,20 @@ public class Repo
         }
         else if (counter > 100)
         {
-            eyes.setBlink(false);
+            leftEye.setBlink(false);
+            rightEye.setBlink(false);
         }
 
         counter++;
         frame.setCounter(counter);
     }
 
-    public void angry(Frame frame, Eyes eyes)
+    public void angry(Frame frame, Eye leftEye, Eye rightEye)
     {
         if(frame.isClick())
         {
-            eyes.setColor(255,30,30);
+            leftEye.setColor(255,30,30);
+            rightEye.setColor(255,30,30);
 
             int count = frame.getClickCounter();
 
@@ -136,54 +138,55 @@ public class Repo
                 e.printStackTrace();
             }
         } else {
-            eyes.setColor(10, 200, 255);
+            leftEye.setColor(10, 200, 255);
+            rightEye.setColor(10, 200, 255);
         }
     }
 
-    public void boundaries(LeftEye leftEye, RightEye rightEye)
+    public void boundaries(Eye leftEye, Eye rightEye)
     {
         //left boundary
-        if(leftEye.getLeftXPos() < 10)
+        if(leftEye.getXPos() < 10)
         {
-            leftEye.setLeftXPos(10);
+            leftEye.setXPos(10);
         }
 
-        if(rightEye.getRightXPos() < 110)
+        if(rightEye.getXPos() < 110)
         {
-            rightEye.setRightXPos(110);
+            rightEye.setXPos(110);
         }
 
         //right boundary
-        if(leftEye.getLeftXPos() > 110)
+        if(leftEye.getXPos() > 110)
         {
-            leftEye.setLeftXPos(110);
+            leftEye.setXPos(110);
         }
 
-        if(rightEye.getRightXPos() > 210)
+        if(rightEye.getXPos() > 210)
         {
-            rightEye.setRightXPos(210);
+            rightEye.setXPos(210);
         }
 
         //upper boundary
-        if(leftEye.getLeftYPos() > 110)
+        if(leftEye.getYPos() > 110)
         {
-            leftEye.setLeftYPos(110);
+            leftEye.setYPos(110);
         }
 
-        if(rightEye.getRightYPos() > 110)
+        if(rightEye.getYPos() > 110)
         {
-            rightEye.setRightYPos(110);
+            rightEye.setYPos(110);
         }
 
         //lower boundary
-        if(leftEye.getLeftYPos() < 10)
+        if(leftEye.getYPos() < 10)
         {
-            leftEye.setLeftYPos(10);
+            leftEye.setYPos(10);
         }
 
-        if(rightEye.getRightYPos() < 10)
+        if(rightEye.getYPos() < 10)
         {
-            rightEye.setRightYPos(10);
+            rightEye.setYPos(10);
         }
     }
 }

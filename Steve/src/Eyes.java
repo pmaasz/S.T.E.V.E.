@@ -32,31 +32,6 @@ public class Eyes
         return curve;
     }
 
-    public void setCurve(int curve)
-    {
-        this.curve = curve;
-    }
-
-    public int getRadius()
-    {
-        return radius;
-    }
-
-    public void setRadius(int radius)
-    {
-        this.radius = radius;
-    }
-
-    public int getCounter()
-    {
-        return counter;
-    }
-
-    public void setCounter(int counter)
-    {
-        this.counter = counter;
-    }
-
     public boolean isBlink()
     {
         return blink;

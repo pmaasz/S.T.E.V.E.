@@ -2,7 +2,7 @@ public class Repo
 {
     public void movingUp(Eye leftEye, Eye rightEye, Frame frame)
     {
-        if(leftEye.getYPos() < frame.getMouseY() && rightEye.getYPos() < frame.getMouseY())
+        if(leftEye.getYPos() < frame.getMouseY() || rightEye.getYPos() < frame.getMouseY())
         {
             int leftYPos = leftEye.getYPos();
             int rightYPos = rightEye.getYPos();
@@ -17,7 +17,7 @@ public class Repo
 
     public void movingDown(Eye leftEye, Eye rightEye, Frame frame)
     {
-        if(leftEye.getYPos() > frame.getMouseY() && rightEye.getYPos() > frame.getMouseY())
+        if(leftEye.getYPos() > frame.getMouseY() || rightEye.getYPos() > frame.getMouseY())
         {
             int leftYPos = leftEye.getYPos();
             int rightYPos = rightEye.getYPos();
@@ -32,7 +32,7 @@ public class Repo
 
     public void movingRight(Eye leftEye, Eye rightEye, Frame frame)
     {
-        if(leftEye.getXPos() < frame.getMouseX() && rightEye.getXPos() < frame.getMouseX())
+        if(leftEye.getXPos() < frame.getMouseX() || rightEye.getXPos() < frame.getMouseX())
         {
             int leftXPos = leftEye.getXPos();
             int rightXPos = rightEye.getXPos();
@@ -47,7 +47,7 @@ public class Repo
 
     public void movingLeft(Eye leftEye, Eye rightEye, Frame frame)
     {
-        if(leftEye.getXPos() > frame.getMouseX() && rightEye.getXPos() > frame.getMouseX())
+        if(leftEye.getXPos() > frame.getMouseX() || rightEye.getXPos() > frame.getMouseX())
         {
             int leftXPos = leftEye.getXPos();
             int rightXPos = rightEye.getXPos();

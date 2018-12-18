@@ -31,8 +31,8 @@ public class Frame extends JFrame
         setLocationRelativeTo(null);
         setVisible(true);
         setTitle("S.T.E.V.E.");
-        addMouseMotionListener(new KeyHandler());
-        addMouseListener(new KeyHandler());
+        addMouseMotionListener(new MouseHandler());
+        addMouseListener(new MouseHandler());
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 
@@ -91,7 +91,7 @@ public class Frame extends JFrame
         this.clickCounter = clickCounter;
     }
 
-    private class KeyHandler implements MouseMotionListener, MouseListener
+    private class MouseHandler implements MouseMotionListener, MouseListener
     {
         @Override
         public void mouseDragged(MouseEvent e) { }

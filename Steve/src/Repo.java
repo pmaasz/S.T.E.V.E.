@@ -89,14 +89,18 @@ public class Repo
         }
     }
 
-    public void blink(Eyes eyes, Frame frame)
+    public void blink(Eye leftEye, Eye rightEye, Frame frame)
     {
         int counter = frame.getCounter();
 
-        if (!eyes.isBlink() && ((counter % 1100) == 0))
+        if ((!leftEye.isBlink() && !rightEye.isBlink()) && ((counter % 1100) == 0))
         {
-            eyes.setColor(0,0,0);
-            eyes.setBlink(true);
+            leftEye.setColor(0,0,0);
+            rightEye.setColor(0,0,0);
+
+            leftEye.setBlink(true);
+            rightEye.setBlink(true);
+            
             frame.repaintDrawPanel();
 
             try {

@@ -19,11 +19,10 @@ public class Frame extends JFrame
      * GraphicsEnvironment is the Environment in which the window is placed
      * @param leftEye
      * @param rightEye
-     * @param eyes
      */
-    public Frame(LeftEye leftEye, RightEye rightEye, Eyes eyes)
+    public Frame(Eye leftEye, Eye rightEye)
     {
-        this.drawPanel = new DrawPanel(leftEye,  rightEye,  eyes);
+        this.drawPanel = new DrawPanel(leftEye,  rightEye);
 
         add(this.drawPanel);
         pack();
@@ -44,12 +43,12 @@ public class Frame extends JFrame
 
     public double getMouseX()
     {
-        return mouseX;
+        return this.mouseX;
     }
 
     public double getMouseY()
     {
-        return mouseY;
+        return this.mouseY;
     }
 
     public void setMouseX(double mouseX)
@@ -64,7 +63,7 @@ public class Frame extends JFrame
 
     public boolean isClick()
     {
-        return click;
+        return this.click;
     }
 
     public void setClick(boolean click)
@@ -74,16 +73,17 @@ public class Frame extends JFrame
 
     public int getCounter()
     {
-        return counter;
+        return this.counter;
     }
 
-    public void setCounter(int counter) {
+    public void setCounter(int counter)
+    {
         this.counter = counter;
     }
 
     public int getClickCounter()
     {
-        return clickCounter;
+        return this.clickCounter;
     }
 
     public void setClickCounter(int clickCounter)

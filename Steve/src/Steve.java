@@ -1,10 +1,14 @@
 public class Steve
 {
-    private Eyes eyes;
+    //private Eyes eyes;
 
-    private LeftEye leftEye;
+    //private LeftEye leftEye;
 
-    private RightEye rightEye;
+    //private RightEye rightEye;
+
+    private Eye rightEye;
+
+    private Eye leftEye;
 
     private Repo repo;
 
@@ -12,11 +16,10 @@ public class Steve
 
     Steve()
     {
-        this.eyes = new Eyes();
-        this.leftEye = new LeftEye();
-        this.rightEye = new RightEye();
+        this.rightEye = new Eye(155, 40, 80, 90);
+        this.leftEye = new Eye(55, 40, 80, 90);
         this.repo = new Repo();
-        this.frame = new Frame(leftEye,  rightEye,  eyes);
+        this.frame = new Frame(leftEye,  rightEye);
     }
 
     public static void main (String[] args)
@@ -47,7 +50,7 @@ public class Steve
             steve.repo.angry(steve.frame, steve.eyes);
 
             //blinking
-            steve.repo.blink(steve.eyes, steve.frame);
+            steve.repo.blink(steve.leftEye, steve.rightEye, steve.frame);
 
             //boundaries
             steve.repo.boundaries(steve.leftEye, steve.rightEye);

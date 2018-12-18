@@ -10,25 +10,25 @@ public class Eye
 
     private int height;
 
-    private int curve = 30;
+    private int curve;
 
-    private int radius = 2;
+    private int radius;
 
-    private int counter = 0;
+    private int counter;
 
     private boolean blink = false;
 
     private Color color;
 
-    public Eye(int xPos, int yPos, int width, int height, int curve, int radius, int counter)
+    public Eye(int xPos, int yPos, int width, int height)
     {
         this.xPos = xPos;
         this.yPos = yPos;
         this.width = width;
         this.height = height;
-        this.curve = curve;
-        this.radius = radius;
-        this.counter = counter;
+        this.curve = 30;
+        this.radius = 2;
+        this.counter = 0;
         this.color = new Color(10, 200, 255);;
     }
 
@@ -62,12 +62,12 @@ public class Eye
         this.width = width;
     }
 
-    public int getHeightright()
+    public int getHeight()
     {
         return this.height;
     }
 
-    public void setHeightright(int height)
+    public void setHeight(int height)
     {
         this.height = height;
     }
@@ -84,12 +84,32 @@ public class Eye
 
     public int getCurve()
     {
-        return curve;
+        return this.curve;
+    }
+
+    public int getRadius()
+    {
+        return this.radius;
+    }
+
+    public void setRadius(int radius)
+    {
+        this.radius = radius;
+    }
+
+    public int getCounter()
+    {
+        return this.counter;
+    }
+
+    public void setCounter(int counter)
+    {
+        this.counter = counter;
     }
 
     public boolean isBlink()
     {
-        return blink;
+        return this.blink;
     }
 
     public void setBlink(boolean blink)

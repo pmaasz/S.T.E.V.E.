@@ -1,4 +1,4 @@
-public class Steve
+public class Steve extends Thread
 {
     private Eye rightEye;
 
@@ -8,7 +8,7 @@ public class Steve
 
     private Frame frame;
 
-    Steve()
+    public Steve()
     {
         this.rightEye = new Eye(155, 40, 80, 90);
         this.leftEye = new Eye(55, 40, 80, 90);
@@ -16,41 +16,39 @@ public class Steve
         this.frame = new Frame(leftEye,  rightEye);
     }
 
-    public static void main (String[] args)
+    synchronized private void movement()
     {
-        Steve steve = new Steve();
-
         while(true)
         {
             //moving up
-            steve.repo.movingUp(steve.leftEye, steve.rightEye, steve.frame);
+            this.repo.movingUp(this.leftEye, this.rightEye, this.frame);
 
             //moving down
-            steve.repo.movingDown(steve.leftEye, steve.rightEye, steve.frame);
+            this.repo.movingDown(this.leftEye, this.rightEye, this.frame);
 
             //moving right
-            steve.repo.movingRight(steve.leftEye, steve.rightEye, steve.frame);
+            this.repo.movingRight(this.leftEye, this.rightEye, this.frame);
 
             //moving left
-            steve.repo.movingLeft(steve.leftEye, steve.rightEye, steve.frame);
+            this.repo.movingLeft(this.leftEye, this.rightEye, this.frame);
 
             //resizing height
-            steve.repo.resizeHeight(steve.leftEye, steve.rightEye);
+            this.repo.resizeHeight(this.leftEye, this.rightEye);
 
             //resizing width
-            steve.repo.resizeWidth(steve.leftEye, steve.rightEye);
+            this.repo.resizeWidth(this.leftEye, this.rightEye);
 
             //looking angry
-            steve.repo.angry(steve.frame, steve.leftEye, steve.rightEye);
+            this.repo.angry(this.frame, this.leftEye, this.rightEye);
 
             //blinking
-            steve.repo.blink(steve.leftEye, steve.rightEye, steve.frame);
+            this.repo.blink(this.leftEye, this.rightEye, this.frame);
 
             //boundaries
-            steve.repo.boundaries(steve.leftEye, steve.rightEye);
+            this.repo.boundaries(this.leftEye, this.rightEye);
 
             //repainting the JPanel
-            steve.frame.repaintDrawPanel();
+            this.frame.repaintDrawPanel();
 
             try {
                 Thread.sleep(2);
@@ -58,5 +56,11 @@ public class Steve
                 e.printStackTrace();
             }
         }
+    }
+
+    @Override
+    public void run ()
+    {
+        this.movement();
     }
 }

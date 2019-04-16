@@ -8,6 +8,9 @@ public class Steve extends Thread
 
     private Frame frame;
 
+    /**
+     * Steve Constructor
+     */
     public Steve()
     {
         this.rightEye = new Eye(155, 40, 80, 90);

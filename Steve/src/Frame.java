@@ -16,9 +16,7 @@ public class Frame extends JFrame
     protected DrawPanel drawPanel;
 
     /**
-     * GraphicsEnvironment is the Environment in which the window is placed
-     * @param leftEye
-     * @param rightEye
+     * GraphicsEnvironment is the environment in which the window is placede
      */
     public Frame(Eye leftEye, Eye rightEye)
     {

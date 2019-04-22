@@ -8,7 +8,7 @@ public class Steve extends Thread
 
     private Frame frame;
 
-    public static final int SLEEP_COUNTER = 0;
+    public static int SLEEP_COUNTER = 0;
 
     /**
      * Steve Constructor
@@ -61,6 +61,13 @@ public class Steve extends Thread
                 Thread.sleep(2);
             } catch (InterruptedException e) {
                 e.printStackTrace();
+            }
+
+            SLEEP_COUNTER++;
+
+            if(SLEEP_COUNTER == 5000)
+            {
+
             }
         }
     }

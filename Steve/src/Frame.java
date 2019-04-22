@@ -13,7 +13,7 @@ public class Frame extends JFrame
 
     private int clickCounter = 0;
 
-    protected DrawPanel drawPanel;
+    private DrawPanel drawPanel;
 
     /**
      * GraphicsEnvironment is the environment in which the window is placede
@@ -97,6 +97,7 @@ public class Frame extends JFrame
         @Override
         public void mouseMoved(MouseEvent e)
         {
+            Steve.SLEEP_COUNTER = 0;
             setMouseX(e.getX());
             setMouseY(e.getY());
         }

@@ -2,9 +2,9 @@ import java.awt.*;
 
 public class Eye
 {
-    private int xPos;
+    private int xPosition;
 
-    private int yPos;
+    private int yPosition;
 
     private int width;
 
@@ -22,8 +22,8 @@ public class Eye
 
     public Eye(int xPos, int yPos, int width, int height)
     {
-        this.xPos = xPos;
-        this.yPos = yPos;
+        this.xPosition = xPos;
+        this.yPosition = yPos;
         this.width = width;
         this.height = height;
         this.curve = 30;
@@ -34,22 +34,22 @@ public class Eye
 
     public int getXPos()
     {
-        return this.xPos;
+        return this.xPosition;
     }
 
     public void setXPos(int xPos)
     {
-        this.xPos = xPos;
+        this.xPosition = xPos;
     }
 
     public int getYPos()
     {
-        return this.yPos;
+        return this.yPosition;
     }
 
     public void setYPos(int yPos)
     {
-        this.yPos = yPos;
+        this.yPosition = yPos;
     }
 
     public int getWidth()

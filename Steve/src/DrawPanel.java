@@ -3,13 +3,23 @@ import java.awt.*;
 
 public class DrawPanel extends JPanel
 {
-    private Eye leftEye;
+    public Eye leftEye;
 
-    private Eye rightEye;
+    public Eye rightEye;
 
     public DrawPanel(Eye leftEye, Eye rightEye)
     {
         this.leftEye = leftEye;
+        this.rightEye = rightEye;
+    }
+
+    public void setLeftEye(Eye leftEye)
+    {
+        this.leftEye = leftEye;
+    }
+
+    public void setRightEye(Eye rightEye)
+    {
         this.rightEye = rightEye;
     }
 

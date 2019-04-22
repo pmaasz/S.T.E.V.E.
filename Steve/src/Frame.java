@@ -18,11 +18,11 @@ public class Frame extends JFrame
     /**
      * GraphicsEnvironment is the environment in which the window is placede
      */
-    public Frame(Eye leftEye, Eye rightEye)
+    public Frame(DrawPanel drawPanel)
     {
-        this.drawPanel = new DrawPanel(leftEye,  rightEye);
+        this.drawPanel = drawPanel;
 
-        add(this.drawPanel);
+        add(drawPanel);
         pack();
         setSize(300,300);
         setResizable(false);

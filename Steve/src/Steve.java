@@ -8,6 +8,8 @@ public class Steve extends Thread
 
     private Frame frame;
 
+    private DrawPanel drawPanel;
+
     public static int SLEEP_COUNTER = 0;
 
     /**
@@ -18,7 +20,8 @@ public class Steve extends Thread
         this.rightEye = new Eye(155, 40, 80, 90);
         this.leftEye = new Eye(55, 40, 80, 90);
         this.repo = new Repo();
-        this.frame = new Frame(leftEye,  rightEye);
+        this.drawPanel = new DrawPanel(this.leftEye, this.rightEye);
+        this.frame = new Frame(this.drawPanel);
     }
 
     synchronized private void movement()

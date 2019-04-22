@@ -189,4 +189,9 @@ public class Repo
             rightEye.setYPos(10);
         }
     }
+
+    public void sleep(Eye leftEye, Eye rightEye, Frame frame)
+    {
+
+    }
 }

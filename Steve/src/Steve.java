@@ -68,9 +68,9 @@ public class Steve extends Thread
 
             SLEEP_COUNTER++;
 
-            if(SLEEP_COUNTER == 5000)
+            if(SLEEP_COUNTER > 5000)
             {
-
+               SLEEP_COUNTER = 0;
             }
         }
     }

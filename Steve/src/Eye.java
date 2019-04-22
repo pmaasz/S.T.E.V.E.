@@ -14,8 +14,6 @@ public class Eye
 
     private int radius;
 
-    private int counter;
-
     private boolean blink = false;
 
     private Color color;
@@ -28,7 +26,6 @@ public class Eye
         this.height = height;
         this.curve = 30;
         this.radius = 2;
-        this.counter = 0;
         this.color = new Color(10, 200, 255);;
     }
 
@@ -95,16 +92,6 @@ public class Eye
     public void setRadius(int radius)
     {
         this.radius = radius;
-    }
-
-    public int getCounter()
-    {
-        return this.counter;
-    }
-
-    public void setCounter(int counter)
-    {
-        this.counter = counter;
     }
 
     public boolean isBlink()

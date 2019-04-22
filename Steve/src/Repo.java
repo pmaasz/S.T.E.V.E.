@@ -194,12 +194,19 @@ public class Repo
     {
         rightEye.setXPos(155);
         rightEye.setYPos(40);
-        rightEye.setCurve(15);
-        rightEye.setHeight(10);
 
         leftEye.setXPos(55);
         leftEye.setYPos(40);
-        leftEye.setCurve(15);
-        leftEye.setHeight(10);
+
+        for(int i = leftEye.getHeight(); i >= 10; i--)
+        {
+            rightEye.setHeight(i);
+            leftEye.setHeight(i);
+        }
+    }
+
+    public void wakeUp(Eye leftEye, Eye rightEye)
+    {
+
     }
 }

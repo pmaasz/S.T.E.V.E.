@@ -70,7 +70,7 @@ public class Steve extends Thread
 
             if(SLEEP_COUNTER > 5000)
             {
-               SLEEP_COUNTER = 0;
+               this.repo.sleep(this.leftEye, this.rightEye);
             }
         }
     }

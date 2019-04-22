@@ -133,7 +133,7 @@ public class Repo
             frame.repaintDrawPanel();
 
             try {
-                Thread.sleep(1000);
+                Thread.sleep(500);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -190,8 +190,16 @@ public class Repo
         }
     }
 
-    public void sleep(Eye leftEye, Eye rightEye, Frame frame)
+    public void sleep(Eye leftEye, Eye rightEye)
     {
+        rightEye.setXPos(155);
+        rightEye.setYPos(40);
+        rightEye.setCurve(15);
+        rightEye.setHeight(10);
 
+        leftEye.setXPos(55);
+        leftEye.setYPos(40);
+        leftEye.setCurve(15);
+        leftEye.setHeight(10);
     }
 }

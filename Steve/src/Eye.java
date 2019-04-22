@@ -84,6 +84,11 @@ public class Eye
         return this.curve;
     }
 
+    public void setCurve(int curve)
+    {
+        this.curve = curve;
+    }
+
     public int getRadius()
     {
         return this.radius;

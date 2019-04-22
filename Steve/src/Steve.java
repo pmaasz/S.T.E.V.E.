@@ -8,6 +8,8 @@ public class Steve extends Thread
 
     private Frame frame;
 
+    public static final int SLEEP_COUNTER = 0;
+
     /**
      * Steve Constructor
      */
@@ -21,7 +23,9 @@ public class Steve extends Thread
 
     synchronized private void movement()
     {
-        while(true)
+        boolean runVariable = true;
+
+        while(runVariable)
         {
             //moving up
             this.repo.movingUp(this.leftEye, this.rightEye, this.frame);
@@ -62,7 +66,7 @@ public class Steve extends Thread
     }
 
     @Override
-    public void run ()
+    public void run()
     {
         this.movement();
     }

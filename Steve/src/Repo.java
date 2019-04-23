@@ -1,5 +1,52 @@
 public class Repo
 {
+    public void boundaries(Eye leftEye, Eye rightEye)
+    {
+        //left boundary
+        if(leftEye.getXPos() < 10)
+        {
+            leftEye.setXPos(10);
+        }
+
+        if(rightEye.getXPos() < 110)
+        {
+            rightEye.setXPos(110);
+        }
+
+        //right boundary
+        if(leftEye.getXPos() > 110)
+        {
+            leftEye.setXPos(110);
+        }
+
+        if(rightEye.getXPos() > 210)
+        {
+            rightEye.setXPos(210);
+        }
+
+        //upper boundary
+        if(leftEye.getYPos() > 110)
+        {
+            leftEye.setYPos(110);
+        }
+
+        if(rightEye.getYPos() > 110)
+        {
+            rightEye.setYPos(110);
+        }
+
+        //lower boundary
+        if(leftEye.getYPos() < 10)
+        {
+            leftEye.setYPos(10);
+        }
+
+        if(rightEye.getYPos() < 10)
+        {
+            rightEye.setYPos(10);
+        }
+    }
+
     public void movingUp(Eye leftEye, Eye rightEye, Frame frame)
     {
         if(leftEye.getYPos() < frame.getMouseY() || rightEye.getYPos() < frame.getMouseY())
@@ -140,53 +187,6 @@ public class Repo
         } else {
             leftEye.setColor(10, 200, 255);
             rightEye.setColor(10, 200, 255);
-        }
-    }
-
-    public void boundaries(Eye leftEye, Eye rightEye)
-    {
-        //left boundary
-        if(leftEye.getXPos() < 10)
-        {
-            leftEye.setXPos(10);
-        }
-
-        if(rightEye.getXPos() < 110)
-        {
-            rightEye.setXPos(110);
-        }
-
-        //right boundary
-        if(leftEye.getXPos() > 110)
-        {
-            leftEye.setXPos(110);
-        }
-
-        if(rightEye.getXPos() > 210)
-        {
-            rightEye.setXPos(210);
-        }
-
-        //upper boundary
-        if(leftEye.getYPos() > 110)
-        {
-            leftEye.setYPos(110);
-        }
-
-        if(rightEye.getYPos() > 110)
-        {
-            rightEye.setYPos(110);
-        }
-
-        //lower boundary
-        if(leftEye.getYPos() < 10)
-        {
-            leftEye.setYPos(10);
-        }
-
-        if(rightEye.getYPos() < 10)
-        {
-            rightEye.setYPos(10);
         }
     }
 

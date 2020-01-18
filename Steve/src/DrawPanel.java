@@ -3,41 +3,49 @@ import java.awt.*;
 
 public class DrawPanel extends JPanel
 {
-    private LeftEye leftEye;
+    public Eye leftEye;
 
-    private RightEye rightEye;
+    public Eye rightEye;
 
-    private Eyes eyes;
-
-    public DrawPanel(LeftEye leftEye, RightEye rightEye, Eyes eyes)
+    public DrawPanel(Eye leftEye, Eye rightEye)
     {
         this.leftEye = leftEye;
         this.rightEye = rightEye;
-        this.eyes = eyes;
+    }
+
+    public void setLeftEye(Eye leftEye)
+    {
+        this.leftEye = leftEye;
+    }
+
+    public void setRightEye(Eye rightEye)
+    {
+        this.rightEye = rightEye;
     }
 
     public void paintComponent(Graphics g)
     {
         Graphics2D g2 = (Graphics2D)g;
+        Color color = new Color(0, 0, 0, 255);
 
-        //Background
-        g2.setColor(Color.BLACK);
+        g2.setColor(color);
         g2.fillRect(0, 0, getWidth(), getHeight());
 
         //Blink
-        if (this.eyes.isBlink())
+        if (this.rightEye.isBlink() && this.leftEye.isBlink())
         {
-            g.setColor(eyes.getColor());
+            g.setColor(this.leftEye.getColor());
+            //g.setColor();
         } else {
-            g.setColor(this.eyes.getColor());
+            g.setColor(this.leftEye.getColor());
         }
 
         //Left
-        g2.drawRoundRect(this.leftEye.getLeftXPos(),this.leftEye.getLeftYPos(), this.leftEye.getWidthleft(), this.leftEye.getHeightleft(), this.eyes.getCurve(), this.eyes.getCurve());
-        g2.fillRoundRect(this.leftEye.getLeftXPos(),this.leftEye.getLeftYPos(), this.leftEye.getWidthleft(), this.leftEye.getHeightleft(), this.eyes.getCurve(), this.eyes.getCurve());
+        g2.drawRoundRect(this.leftEye.getXPos(),this.leftEye.getYPos(), this.leftEye.getWidth(), this.leftEye.getHeight(), this.leftEye.getCurve(), this.leftEye.getCurve());
+        g2.fillRoundRect(this.leftEye.getXPos(),this.leftEye.getYPos(), this.leftEye.getWidth(), this.leftEye.getHeight(), this.leftEye.getCurve(), this.leftEye.getCurve());
 
         //Right
-        g2.drawRoundRect(this.rightEye.getRightXPos(),this.rightEye.getRightYPos(), this.rightEye.getWidthright(), this.rightEye.getHeightright(), this.eyes.getCurve(), this.eyes.getCurve());
-        g2.fillRoundRect(this.rightEye.getRightXPos(),this.rightEye.getRightYPos(), this.rightEye.getWidthright(), this.rightEye.getHeightright(), this.eyes.getCurve(), this.eyes.getCurve());
+        g2.drawRoundRect(this.rightEye.getXPos(),this.rightEye.getYPos(), this.rightEye.getWidth(), this.rightEye.getHeight(), this.leftEye.getCurve(), this.leftEye.getCurve());
+        g2.fillRoundRect(this.rightEye.getXPos(),this.rightEye.getYPos(), this.rightEye.getWidth(), this.rightEye.getHeight(), this.leftEye.getCurve(), this.leftEye.getCurve());
     }
 }

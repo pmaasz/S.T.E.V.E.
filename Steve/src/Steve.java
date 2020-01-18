@@ -1,161 +1,83 @@
-public class Steve {
+public class Steve extends Thread
+{
+    private Eye rightEye;
 
-    public static void main (String[] args)
+    private Eye leftEye;
+
+    private Repo repo;
+
+    private Frame frame;
+
+    private DrawPanel drawPanel;
+
+    public static int SLEEP_COUNTER = 0;
+
+    /**
+     * Steve Constructor
+     */
+    public Steve()
     {
-        Eyes eyes = new Eyes();
-        LeftEye leftEye = new LeftEye();
-        RightEye rightEye = new RightEye();
-        Repo repo = new Repo();
-        Frame frame = new Frame(leftEye,  rightEye,  eyes);
+        this.rightEye = new Eye(155, 40, 80, 90);
+        this.leftEye = new Eye(55, 40, 80, 90);
+        this.repo = new Repo();
+        this.drawPanel = new DrawPanel(this.leftEye, this.rightEye);
+        this.frame = new Frame(this.drawPanel);
+    }
 
-        while(true)
+    synchronized private void movement()
+    {
+        boolean runVariable = true;
+
+        while(runVariable)
         {
-            //resizing height
-            if((leftEye.getLeftYPos() > 90 || leftEye.getLeftYPos() < 30) && (rightEye.getRightYPos() > 90 || rightEye.getRightYPos() < 30))
-            {
-                rightEye.setHeightright(70);
-                leftEye.setHeightleft(70);
-                //frame.repaintDrawPanel();
-
-            } else {
-                leftEye.setHeightleft(90);
-                rightEye.setHeightright(90);
-                //frame.repaintDrawPanel();
-            }
-
-            //upper boundary
-            if(leftEye.getLeftYPos() > 110)
-            {
-                leftEye.setLeftYPos(110);
-                //frame.repaintDrawPanel();
-            }
-
-            if(rightEye.getRightYPos() > 110)
-            {
-                rightEye.setRightYPos(110);
-                //frame.repaintDrawPanel();
-            }
-
-            //lower boundary
-            if(leftEye.getLeftYPos() < 10)
-            {
-                leftEye.setLeftYPos(10);
-                //frame.repaintDrawPanel();
-            }
-
-            if(rightEye.getRightYPos() < 10)
-            {
-                rightEye.setRightYPos(10);
-                //frame.repaintDrawPanel();
-            }
-
             //moving up
-            if(leftEye.getLeftYPos() < frame.getMouseY() && rightEye.getRightYPos() < frame.getMouseY())
-            {
-                int leftYPos = leftEye.getLeftYPos();
-                int rightYPos = rightEye.getRightYPos();
-                leftYPos++;
-                rightYPos++;
-                leftEye.setLeftYPos(leftYPos);
-                rightEye.setRightYPos(rightYPos);
-                //frame.repaintDrawPanel();
-            }
+            this.repo.movingUp(this.leftEye, this.rightEye, this.frame);
 
             //moving down
-            if(leftEye.getLeftYPos() > frame.getMouseY() && rightEye.getRightYPos() > frame.getMouseY())
-            {
-                int leftYPos = leftEye.getLeftYPos();
-                int rightYPos = rightEye.getRightYPos();
-                leftYPos--;
-                rightYPos--;
-                leftEye.setLeftYPos(leftYPos);
-                rightEye.setRightYPos(rightYPos);
-                //frame.repaintDrawPanel();
-            }
-
-            //resizing width
-            if(leftEye.getLeftXPos() < 25)
-            {
-                leftEye.setWidthleft(70);
-                //frame.repaintDrawPanel();
-            } else {
-                leftEye.setWidthleft(80);
-                //frame.repaintDrawPanel();
-            }
-
-            if(rightEye.getRightXPos() > 200)
-            {
-                rightEye.setWidthright(70);
-                //frame.repaintDrawPanel();
-            } else {
-                rightEye.setWidthright(80);
-                //frame.repaintDrawPanel();
-            }
-
-            //left boundary
-            if(leftEye.getLeftXPos() < 10)
-            {
-                leftEye.setLeftXPos(10);
-                //frame.repaintDrawPanel();
-            }
-
-            if(rightEye.getRightXPos() < 110)
-            {
-                rightEye.setRightXPos(110);
-                //frame.repaintDrawPanel();
-            }
-
-            //right boundary
-            if(leftEye.getLeftXPos() > 110)
-            {
-                leftEye.setLeftXPos(110);
-                //frame.repaintDrawPanel();
-            }
-
-            if(rightEye.getRightXPos() > 210)
-            {
-                rightEye.setRightXPos(210);
-                //frame.repaintDrawPanel();
-            }
+            this.repo.movingDown(this.leftEye, this.rightEye, this.frame);
 
             //moving right
-            if(leftEye.getLeftXPos() < frame.getMouseX() && rightEye.getRightXPos() < frame.getMouseX())
-            {
-                int leftXPos = leftEye.getLeftXPos();
-                int rightXPos = rightEye.getRightXPos();
-                leftXPos++;
-                rightXPos++;
-                leftEye.setLeftXPos(leftXPos);
-                rightEye.setRightXPos(rightXPos);
-                //frame.repaintDrawPanel();
-            }
+            this.repo.movingRight(this.leftEye, this.rightEye, this.frame);
 
             //moving left
-            if(leftEye.getLeftXPos() > frame.getMouseX() && rightEye.getRightXPos() > frame.getMouseX())
-            {
-                int leftXPos = leftEye.getLeftXPos();
-                int rightXPos = rightEye.getRightXPos();
-                leftXPos--;
-                rightXPos--;
-                leftEye.setLeftXPos(leftXPos);
-                rightEye.setRightXPos(rightXPos);
-                //frame.repaintDrawPanel();
-            }
+            this.repo.movingLeft(this.leftEye, this.rightEye, this.frame);
+
+            //resizing height
+            this.repo.resizeHeight(this.leftEye, this.rightEye);
+
+            //resizing width
+            this.repo.resizeWidth(this.leftEye, this.rightEye);
 
             //looking angry
-            repo.angry(frame, eyes);
+            this.repo.angry(this.frame, this.leftEye, this.rightEye);
 
             //blinking
-            repo.blink(eyes, frame);
+            this.repo.blink(this.leftEye, this.rightEye, this.frame);
+
+            //boundaries
+            this.repo.boundaries(this.leftEye, this.rightEye);
 
             //repainting the JPanel
-            frame.repaintDrawPanel();
+            this.frame.repaintDrawPanel();
 
             try {
                 Thread.sleep(2);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+
+            SLEEP_COUNTER++;
+
+            if(SLEEP_COUNTER > 5000)
+            {
+               this.repo.sleep(this.leftEye, this.rightEye);
+            }
         }
+    }
+
+    @Override
+    public void run()
+    {
+        this.movement();
     }
 }

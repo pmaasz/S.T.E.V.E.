@@ -11,28 +11,27 @@ public class Frame extends JFrame
 
     private int counter = 0;
 
-    protected DrawPanel drawPanel;
+    private int clickCounter = 0;
 
-    public Frame(LeftEye leftEye, RightEye rightEye, Eyes eyes)
+    private DrawPanel drawPanel;
+
+    /**
+     * GraphicsEnvironment is the environment in which the window is placede
+     */
+    public Frame(DrawPanel drawPanel)
     {
-        this.drawPanel = new DrawPanel(leftEye,  rightEye,  eyes);
+        this.drawPanel = drawPanel;
 
-        add(this.drawPanel);
+        add(drawPanel);
         pack();
         setSize(300,300);
         setResizable(false);
         setLocationRelativeTo(null);
         setVisible(true);
         setTitle("S.T.E.V.E.");
-        addMouseMotionListener(new KeyHandler());
-        addMouseListener(new KeyHandler());
-        addWindowListener(new WindowAdapter()
-        {
-            public void windowClosing(WindowEvent e)
-            {
-                System.exit(0);
-            }
-        });
+        addMouseMotionListener(new MouseHandler());
+        addMouseListener(new MouseHandler());
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 
     public void repaintDrawPanel()
@@ -42,12 +41,12 @@ public class Frame extends JFrame
 
     public double getMouseX()
     {
-        return mouseX;
+        return this.mouseX;
     }
 
     public double getMouseY()
     {
-        return mouseY;
+        return this.mouseY;
     }
 
     public void setMouseX(double mouseX)
@@ -62,7 +61,7 @@ public class Frame extends JFrame
 
     public boolean isClick()
     {
-        return click;
+        return this.click;
     }
 
     public void setClick(boolean click)
@@ -70,23 +69,35 @@ public class Frame extends JFrame
         this.click = click;
     }
 
-    public int getCounter() {
-        return counter;
+    public int getCounter()
+    {
+        return this.counter;
     }
 
-    public void setCounter(int counter) {
+    public void setCounter(int counter)
+    {
         this.counter = counter;
     }
 
-    private class KeyHandler implements MouseMotionListener, MouseListener
+    public int getClickCounter()
     {
+        return this.clickCounter;
+    }
 
+    public void setClickCounter(int clickCounter)
+    {
+        this.clickCounter = clickCounter;
+    }
+
+    private class MouseHandler implements MouseMotionListener, MouseListener
+    {
         @Override
         public void mouseDragged(MouseEvent e) { }
 
         @Override
         public void mouseMoved(MouseEvent e)
         {
+            Steve.SLEEP_COUNTER = 0;
             setMouseX(e.getX());
             setMouseY(e.getY());
         }
